@@ -19,7 +19,9 @@
 
 ## Phase 2 — Site Structure
 
-- [ ] Navbar
+- [x] Desktop Navbar (profile URLs pending; theme toggle placeholder)
+- [ ] Accessible mobile navigation menu
+- [ ] Implement theme toggle
 - [ ] Footer
 - [ ] Home page
 - [ ] Projects page
