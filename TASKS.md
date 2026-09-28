@@ -31,7 +31,7 @@
 
 ## Phase 3 — Home
 
-- [ ] Hero
+- [x] Hero
 - [ ] Featured projects
 - [ ] Latest project updates
 - [ ] Short about section
