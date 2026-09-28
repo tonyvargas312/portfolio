@@ -1,0 +1,86 @@
+.featured-projects {
+  padding-block-start: var(--space-12);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.featured-projects__carousel {
+  margin-block-start: var(--space-12);
+}
+
+.featured-projects__viewport {
+  display: grid;
+}
+
+/* All slides contribute to the viewport height at every screen width.
+   Inactive slides are invisible, inert, and excluded from accessibility APIs. */
+.featured-projects__slide {
+  grid-area: 1 / 1;
+  min-inline-size: 0;
+}
+
+.featured-projects__slide[aria-hidden='true'] {
+  visibility: hidden;
+}
+
+.featured-projects__controls {
+  margin-block-start: var(--space-6);
+}
+
+.featured-projects__navigation,
+.featured-projects__dots {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.featured-projects__controls button {
+  min-block-size: 2.75rem;
+  padding: var(--space-2);
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.featured-projects__controls button:hover {
+  color: var(--color-accent-hover);
+}
+
+.featured-projects__position {
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.featured-projects__dots {
+  gap: 0;
+}
+
+.featured-projects__dot {
+  display: grid;
+  place-items: center;
+  min-inline-size: 2.75rem;
+}
+
+.featured-projects__dot span {
+  inline-size: var(--space-2);
+  block-size: var(--space-2);
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.featured-projects__dot[aria-current='true'] span {
+  background: currentColor;
+}
+
+@media (min-width: 64rem) {
+  .featured-projects__carousel {
+    margin-block-start: var(--space-16);
+  }
+
+  .featured-projects__controls {
+    /* Match the preview's 3:2 columns and shared gap. */
+    margin-inline-start: calc((100% - var(--space-12)) * 0.6 + var(--space-12));
+  }
+}

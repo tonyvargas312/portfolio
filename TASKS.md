@@ -32,7 +32,8 @@
 ## Phase 3 — Home
 
 - [x] Hero
-- [ ] Featured projects
+- [x] Featured projects (editorial previews with image and link placeholders)
+- [x] Featured projects carousel (stable viewport, keyboard navigation, accessible controls)
 - [ ] Latest project updates
 - [ ] Short about section
 - [ ] Education and certifications preview
@@ -40,7 +41,8 @@
 
 ## Phase 4 — Projects
 
-- [ ] Create project data model
+- [x] Create typed project preview data model
+- [ ] Extend project data model for full case studies
 - [ ] Train Survival
 - [ ] Party Hotspots
 - [ ] Parking Availability System
