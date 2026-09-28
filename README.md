@@ -1,4 +1,4 @@
-# Anthony Vargas Portfolio
+﻿# Anthony Vargas Portfolio
 
 Personal portfolio website built with React, TypeScript and Vite.
 
@@ -46,5 +46,41 @@ Projects are presented in a blog / case-study style, allowing visitors to explor
 
 Install dependencies:
 
-```bash
-npm install
+    npm install
+
+Start the development server:
+
+    npm run dev
+
+Build for production:
+
+    npm run build
+
+Run the linter:
+
+    npm run lint
+
+## Project status
+
+This portfolio is currently under development.
+
+The initial focus is on:
+
+- establishing the site structure
+- creating the visual identity
+- building reusable project components
+- documenting active projects
+- adding education and certifications
+- connecting GitHub, LinkedIn and resume information
+
+## Planned sections
+
+- Home
+- Projects
+- Individual project pages
+- Writing / development updates
+- About
+- Education
+- Certifications
+- Resume
+- Contact
