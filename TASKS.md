@@ -1,14 +1,17 @@
-﻿# Portfolio Tasks
+# Portfolio Tasks
 
 ## Phase 1 — Foundation
 
 - [x] Initialize React + Vite + TypeScript
 - [x] Initialize Git repository
-- [ ] Create project folder structure
+- [x] Create project folder structure
 - [x] Add AGENTS.md
 - [x] Add README.md
 - [x] Add TASKS.md
-- [ ] Remove default Vite demo content
+- [x] Remove default Vite demo content (unused assets preserved)
+- [x] Create minimal App structure
+- [x] Add basic global CSS reset / foundation
+- [x] Verify foundation with build and lint checks
 - [ ] Establish global typography and spacing
 - [ ] Create light and dark theme foundations
 
