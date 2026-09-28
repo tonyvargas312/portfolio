@@ -22,7 +22,6 @@
 - [ ] Home page
 - [ ] Projects page
 - [ ] Project detail page template
-- [ ] Writing page
 - [ ] About page
 - [ ] Resume page
 
@@ -46,8 +45,7 @@
 
 ## Phase 5 — Professional Profile
 
-- [ ] Education section
-- [ ] Certifications
+- [ ] Education / Certifications section
 - [ ] LinkedIn
 - [ ] GitHub
 - [ ] Resume PDF

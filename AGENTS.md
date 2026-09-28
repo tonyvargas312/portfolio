@@ -7,7 +7,7 @@ This is Anthony Vargas' personal portfolio website.
 The portfolio should function as:
 - a professional profile
 - a project showcase
-- a project development blog
+- a project development showcase
 - a place to present education and certifications
 - a hub for GitHub, LinkedIn, resume and contact information
 
@@ -61,10 +61,8 @@ Projects should be data-driven so new projects can be added easily.
 - Home
 - Projects
 - Individual project pages
-- Writing / project updates
 - About
-- Education
-- Certifications
+- Education/Certifications
 - Resume
 - Contact
 

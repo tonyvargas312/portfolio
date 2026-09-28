@@ -19,7 +19,7 @@ The website is intended to showcase:
 
 This site is designed as a personal technical website rather than a traditional one-page portfolio.
 
-Projects are presented in a blog / case-study style, allowing visitors to explore the development process, technical decisions, progress and lessons learned.
+Projects are presented in a case-study style, allowing visitors to explore the development process, technical decisions, progress and lessons learned.
 
 ## Main project categories
 
@@ -78,9 +78,7 @@ The initial focus is on:
 - Home
 - Projects
 - Individual project pages
-- Writing / development updates
 - About
-- Education
-- Certifications
+- Education/Certifications
 - Resume
 - Contact
