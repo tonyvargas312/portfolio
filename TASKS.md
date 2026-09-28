@@ -12,8 +12,10 @@
 - [x] Create minimal App structure
 - [x] Add basic global CSS reset / foundation
 - [x] Verify foundation with build and lint checks
-- [ ] Establish global typography and spacing
-- [ ] Create light and dark theme foundations
+- [x] Establish global typography and spacing
+- [x] Create light and dark theme foundations
+- [x] Add page container and reading width utilities
+- [x] Add responsive foundation breakpoints (40rem and 64rem)
 
 ## Phase 2 — Site Structure
 

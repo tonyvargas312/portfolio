@@ -1,6 +1,6 @@
 function App() {
   return (
-    <main>
+    <main className="container page stack">
       <h1>Anthony Vargas</h1>
       <p>Portfolio under development.</p>
     </main>
