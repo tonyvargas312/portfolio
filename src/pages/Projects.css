@@ -1,0 +1,19 @@
+.projects-page__heading {
+  margin-block-end: var(--section-gap);
+}
+
+.projects-page__heading p {
+  margin-block-start: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+.projects-page__list {
+  display: grid;
+  gap: var(--section-gap);
+}
+
+.projects-page__list > .project-preview {
+  padding-block-start: var(--space-12);
+  border-block-start: 1px solid var(--color-border);
+}

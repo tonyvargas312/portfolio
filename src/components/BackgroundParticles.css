@@ -1,0 +1,58 @@
+.background-particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.background-particles__particle {
+  position: absolute;
+  inline-size: var(--particle-size);
+  block-size: var(--particle-size);
+  animation: particle-drift var(--drift-duration) linear var(--drift-delay) infinite;
+}
+
+.background-particles__particle::before {
+  content: '';
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.2;
+  animation: particle-twinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite;
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translateY(-32px);
+    opacity: 0;
+  }
+  15%, 85% {
+    opacity: 2;
+  }
+  100% {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 39.999rem) {
+  .background-particles__particle:nth-child(n + 128) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background-particles__particle,
+  .background-particles__particle::before {
+    animation: none;
+  }
+}

@@ -125,27 +125,6 @@ Projects should feel more like editorial previews or article previews.
 
 ---
 
-## 4. Latest Project Updates
-
-A compact section showing recent progress from active projects.
-
-Examples:
-
-Train Survival
-Designing gameplay and wagon systems
-
-Parking Availability System
-Requirements and QA/V&V planning
-
-Party Hotspots
-Defining the initial product concept
-
-This is not a blog.
-
-Updates belong to projects and should link to their respective project pages.
-
----
-
 ## 5. About Preview
 
 A short introduction to Anthony.
@@ -274,9 +253,19 @@ Interesting technical or design problems encountered.
 
 What was learned while developing the project.
 
-## Project Updates
+## Development Log
 
-Chronological development updates related specifically to this project.
+Each project can contain chronological development entries.
+
+Each entry may include:
+
+- date
+- title
+- short update
+- screenshots
+- technical notes
+- related technologies
+- tags
 
 ## Next Steps
 

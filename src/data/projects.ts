@@ -1,35 +1,70 @@
-export type ProjectPreviewData = {
-  id: string
-  title: string
-  description: string
-  category: string
-  status: 'Active Development' | 'In Development'
-  technologies?: readonly string[]
-}
+import type { Project } from '../types/project'
 
-export const featuredProjects: readonly ProjectPreviewData[] = [
+export const projects: readonly Project[] = [
   {
     id: 'train-survival',
+    slug: 'train-survival',
     title: 'Train Survival',
-    description: 'A post-apocalyptic train survival and management game.',
+    shortDescription: 'A post-apocalyptic train survival and management game.',
     category: 'Game Development',
     status: 'Active Development',
     technologies: ['Godot', 'GDScript', 'Aseprite'],
+    previewImage: null,
+    lastUpdated: null,
+    featured: true,
+    projectUrl: '/projects/train-survival',
+    details: {
+      description: 'Train Survival is a post-apocalyptic game centered on train survival and management. Detailed gameplay and design information is to be confirmed.',
+      keyFeatures: ['Feature details to be confirmed.'],
+      developmentStatus: 'Active development. Milestones and release plans are to be confirmed.',
+      resources: [
+        { id: 'pdf', title: 'PDF document to be added', kind: 'PDF', url: null },
+        { id: 'design', title: 'Design document to be added', kind: 'Design document', url: null },
+        { id: 'requirements', title: 'Requirements document to be added', kind: 'Requirements document', url: null },
+        { id: 'github', title: 'Repository link to be added', kind: 'GitHub', url: null },
+        { id: 'external', title: 'Project link to be added', kind: 'External link', url: null },
+        { id: 'download', title: 'Downloadable file to be added', kind: 'Download', url: null, download: true },
+      ],
+    },
+    updates: [],
+    screenshots: [],
+    videos: [],
+    tags: [],
   },
   {
     id: 'party-hotspots',
+    slug: 'party-hotspots',
     title: 'Party Hotspots',
-    description:
+    shortDescription:
       'An application concept for discovering nightlife hotspots, venue activity, and social interaction.',
     category: 'Software Development',
     status: 'In Development',
+    technologies: [],
+    previewImage: null,
+    lastUpdated: null,
+    featured: true,
+    projectUrl: null,
+    updates: [],
+    screenshots: [],
+    videos: [],
+    tags: [],
   },
   {
     id: 'university-parking',
+    slug: 'university-parking-availability-system',
     title: 'University Parking Availability System',
-    description:
+    shortDescription:
       'A system designed to help people find available parking spaces across university parking lots.',
     category: 'Software Engineering / University Project',
     status: 'In Development',
+    technologies: [],
+    previewImage: null,
+    lastUpdated: null,
+    featured: true,
+    projectUrl: null,
+    updates: [],
+    screenshots: [],
+    videos: [],
+    tags: [],
   },
 ]

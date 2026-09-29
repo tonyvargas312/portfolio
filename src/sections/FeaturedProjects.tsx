@@ -1,10 +1,12 @@
 import ProjectPreview from '../components/ProjectPreview'
-import { featuredProjects } from '../data/projects'
+import type { Project } from '../types/project'
 import './FeaturedProjects.css'
 
-function FeaturedProjects() {
+function FeaturedProjects({ projects: featuredProjects }: { projects: readonly Project[] }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const count = featuredProjects.length
+
+  if (count === 0) return null
 
   function moveProject(direction: number) {
     setActiveIndex((current) => (current + direction + count) % count)
@@ -45,17 +47,12 @@ function FeaturedProjects() {
           ))}
         </div>
         <div className="featured-projects__controls">
-          <div className="featured-projects__navigation">
             <button type="button" onClick={() => moveProject(-1)} aria-label="Previous project" aria-controls="featured-projects-viewport">
-              Previous
+              <span aria-hidden="true">←</span>
             </button>
             <span className="featured-projects__position" role="status" aria-atomic="true" aria-label={`Project ${activeIndex + 1} of ${count}: ${featuredProjects[activeIndex].title}`}>
-              {String(activeIndex + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}
+              {featuredProjects[activeIndex].title}
             </span>
-            <button type="button" onClick={() => moveProject(1)} aria-label="Next project" aria-controls="featured-projects-viewport">
-              Next
-            </button>
-          </div>
           <div className="featured-projects__dots" role="group" aria-label="Choose a project">
             {featuredProjects.map((project, index) => (
               <button
@@ -71,6 +68,9 @@ function FeaturedProjects() {
               </button>
             ))}
           </div>
+          <button type="button" onClick={() => moveProject(1)} aria-label="Next project" aria-controls="featured-projects-viewport">
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
       </div>
     </section>
