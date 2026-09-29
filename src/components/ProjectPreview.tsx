@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { Project } from '../types/project'
 import './ProjectPreview.css'
 
@@ -47,9 +48,9 @@ function ProjectPreview({ project, reversed = false, showLastUpdated = false, he
           )}
         </dl>
         {project.projectUrl ? (
-          <a className="project-preview__link" href={project.projectUrl} aria-label={`View project: ${project.title}`}>
+          <Link className="project-preview__link" to={project.projectUrl} aria-label={`View project: ${project.title}`}>
             View project
-          </a>
+          </Link>
         ) : (
         <span
           className="project-preview__link"

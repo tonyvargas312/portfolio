@@ -19,15 +19,18 @@
 
 ## Phase 2 — Site Structure
 
-- [x] Desktop Navbar (profile URLs pending; theme toggle placeholder)
-- [ ] Accessible mobile navigation menu
-- [ ] Implement theme toggle
+- [x] React Router routes with shared shell, internal navigation, and Not Found page
+- [x] About and Resume routes
+
+- [x] Desktop Navbar (grouped navigation, social placeholders, and home logo slot)
+- [x] Accessible mobile navigation menu (dropdown, Escape handling, link dismissal)
+- [x] Theme selector (shared System / Light / Dark state, desktop and mobile dropdown)
 - [x] Footer (responsive layout, copyright, and social profile placeholders)
 - [ ] Home page
 - [x] Projects page (shared data, alternating editorial previews, no filtering or detail pages)
 - [x] Reusable project detail page (image carousel, editorial sections, resource placeholders)
-- [ ] About page
-- [ ] Resume page
+- [x] About page (video-ready introduction, editorial sections, shared education and contact data; personal interests and video pending)
+- [x] Resume page (accessible map search, reduced-motion support, direct access; PDF pending)
 
 ## Phase 3 — Home
 

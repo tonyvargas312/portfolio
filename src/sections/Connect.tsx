@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { connectLinks } from '../data/connect'
 import './Connect.css'
 
@@ -16,7 +17,8 @@ function Connect() {
           {connectLinks.map(({ label, href }) => (
             <li key={label}>
               {href ? (
-                <a className="connect__link" href={href}>{label}</a>
+                href.startsWith('/') ? <Link className="connect__link" to={href}>{label}</Link>
+                  : <a className="connect__link" href={href}>{label}</a>
               ) : (
                 <span className="connect__placeholder" role="link" aria-disabled="true"
                   aria-label={`${label} — coming soon`}>

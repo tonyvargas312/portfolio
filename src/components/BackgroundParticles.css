@@ -20,8 +20,8 @@
   inline-size: 100%;
   block-size: 100%;
   border-radius: 50%;
-  background: #fff;
-  opacity: 0.2;
+  background: var(--color-particle);
+  opacity: var(--particle-opacity-static);
   animation: particle-twinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite;
 }
 
@@ -40,8 +40,8 @@
 }
 
 @keyframes particle-twinkle {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.5; }
+  0%, 100% { opacity: var(--particle-opacity-min); }
+  50% { opacity: var(--particle-opacity-max); }
 }
 
 @media (max-width: 39.999rem) {

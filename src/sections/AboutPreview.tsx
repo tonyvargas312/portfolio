@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './AboutPreview.css'
 
 function AboutPreview() {
@@ -17,7 +18,7 @@ function AboutPreview() {
           software, games, and university projects, learning continuously through
           hands-on experimentation.
         </p>
-        <a className="about-preview__link" href="/about">More about me</a>
+        <Link className="about-preview__link" to="/about">More about me</Link>
       </div>
     </section>
   )

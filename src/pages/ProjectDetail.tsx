@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import ProjectGallery from '../components/ProjectGallery'
 import type { Project, ProjectDetails } from '../types/project'
 import './ProjectDetail.css'
@@ -6,7 +7,7 @@ function ProjectDetail({ project, details }: { project: Project; details: Projec
   return (
     <article className="project-detail">
       <header className="project-detail__header">
-        <a href="/projects">Back to projects</a>
+        <Link to="/projects">Back to projects</Link>
         <p className="project-detail__category">{project.category}</p>
         <h1>{project.title}</h1>
         <dl className="project-detail__metadata">

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import heroTechOrbit from '../assets/hero-tech-orbit.png'
 import './Hero.css'
 
@@ -11,8 +12,8 @@ function Hero() {
           projects that turn ideas into practical solutions.
         </p>
         <div className="hero__actions">
-          <a className="hero__primary" href="/projects">View Projects</a>
-          <a className="hero__secondary" href="/resume">Resume</a>
+          <Link className="hero__primary" to="/projects">View Projects</Link>
+          <Link className="hero__secondary" to="/resume">Resume</Link>
         </div>
       </div>
       <div className="hero__visual">

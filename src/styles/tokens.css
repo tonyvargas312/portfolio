@@ -47,6 +47,10 @@
   --color-accent: #14675e;
   --color-accent-hover: #0c4c45;
   --color-focus: var(--color-accent);
+  --color-particle: #344e49;
+  --particle-opacity-min: 0.08;
+  --particle-opacity-max: 0.24;
+  --particle-opacity-static: 0.14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,6 +63,10 @@
     --color-border: #414c44;
     --color-accent: #8ed8c8;
     --color-accent-hover: #b4eadf;
+    --color-particle: #f1f2ec;
+    --particle-opacity-min: 0.1;
+    --particle-opacity-max: 0.5;
+    --particle-opacity-static: 0.2;
   }
 }
 
@@ -71,6 +79,10 @@
   --color-border: #414c44;
   --color-accent: #8ed8c8;
   --color-accent-hover: #b4eadf;
+  --color-particle: #f1f2ec;
+  --particle-opacity-min: 0.1;
+  --particle-opacity-max: 0.5;
+  --particle-opacity-static: 0.2;
 }
 
 /* Mobile first: 40rem (tablet), 64rem (desktop).
