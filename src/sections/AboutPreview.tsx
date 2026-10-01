@@ -6,7 +6,7 @@ function AboutPreview() {
   return (
     <section className="about-preview" aria-labelledby="about-preview-title">
       <div className="about-preview__layout">
-        <h2 id="about-preview-title" className="about-preview__title">About Me</h2>
+        <h2 id="about-preview-title" className="section-title about-preview__title">About Me</h2>
         <div className="about-preview__photo">
           <PortfolioPhoto filename="profile.jpeg" alt="Anthony Vargas portrait" />
         </div>

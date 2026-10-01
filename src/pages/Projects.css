@@ -15,5 +15,5 @@
 
 .projects-page__list > .project-preview {
   padding-block-start: var(--space-12);
-  border-block-start: 1px solid var(--color-border);
+  
 }

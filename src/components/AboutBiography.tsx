@@ -15,7 +15,7 @@ function AboutBiography() {
   return (
     <section className="about-page__introduction about-biography" aria-labelledby="about-page-title">
       <header className="about-biography__intro stack">
-        <h1 id="about-page-title" className="about-page__title">About Me</h1>
+        <h1 id="about-page-title" className="section-title">About Me</h1>
         <BiographyParagraphs paragraphs={biography.slice(0, 1)} />
       </header>
       <div className="about-biography__row about-biography__row--text-first">

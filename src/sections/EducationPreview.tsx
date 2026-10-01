@@ -18,8 +18,8 @@ function EducationPreview() {
 
   return (
     <section className="education-preview" aria-labelledby="education-preview-title">
-      <header className="education-preview__heading">
-        <h2 id="education-preview-title">Education &amp; certifications</h2>
+      <header className="section-heading">
+        <h2 className="section-title" id="education-preview-title">Education &amp; certifications</h2>
         <p>Formal study and continued learning, put into practice.</p>
       </header>
       <EducationCard item={featuredEducation} featured />

@@ -15,7 +15,7 @@ function Connect({ description = 'Explore my work, view my professional profile 
   return (
     <section id="connect" className="connect" aria-labelledby="connect-title">
       <div className="connect__introduction">
-        <h2 id="connect-title">Let’s Connect</h2>
+        <h2 className="section-title" id="connect-title">Let’s Connect</h2>
         <p>{description}</p>
       </div>
       <nav aria-label="Connect">

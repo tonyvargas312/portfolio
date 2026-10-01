@@ -2,9 +2,8 @@
   inline-size: min(var(--width-wide), calc(100vw - 2 * var(--page-gutter)));
   margin-inline: calc((100% - min(var(--width-wide), 100vw - 2 * var(--page-gutter))) / 2);
 }
-.resume-page h1 { font-size: var(--text-3xl); }
 .resume-page__intro { font-size: var(--text-lg); max-inline-size: 65ch; }
-.resume-map { margin-block-start: var(--space-12); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--space-4); background: var(--color-surface); box-shadow: 0 var(--space-2) var(--space-6) rgb(0 0 0 / .06); }
+.resume-map { margin-block-start: var(--space-8); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--space-4); background: var(--color-surface); box-shadow: 0 var(--space-2) var(--space-6) rgb(0 0 0 / .06); }
 .resume-map__legend { color: var(--color-text-muted); font-size: var(--text-small); }
 .resume-map__locations { position: relative; aspect-ratio: 3 / 2; margin-block: var(--space-6); overflow: hidden; border-radius: var(--space-2); }
 .resume-map__art { display: block; inline-size: 100%; block-size: 100%; color: var(--color-text); }

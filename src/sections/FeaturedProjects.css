@@ -1,6 +1,6 @@
 .featured-projects {
   padding-block-start: var(--space-12);
-  border-block-start: 1px solid var(--color-border);
+  
 }
 
 .featured-projects__carousel {

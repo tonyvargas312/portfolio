@@ -1,4 +1,4 @@
-﻿import { useId, useState } from 'react'
+import { useId, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ArrowIcon from './ArrowIcon'
 import ProjectCard from './ProjectCard'
@@ -25,8 +25,8 @@ function ProjectsShowcase({ projects, headingLevel: Heading = 'h2', introduction
   }
   return (
     <section className="projects-showcase" aria-labelledby={`${id}-title`}>
-      <header className="projects-showcase__heading">
-        <Heading id={`${id}-title`}>Projects</Heading>
+      <header className="section-heading">
+        <Heading className="section-title" id={`${id}-title`}>Projects</Heading>
         {introduction && <p className="reading-width">{introduction}</p>}
       </header>
       <div className="projects-showcase__filters" role="group" aria-label="Filter projects by tag">

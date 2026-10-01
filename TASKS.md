@@ -164,3 +164,5 @@
 - [x] Vercel preparation (minimal SPA rewrite, dashboard setup documentation, production route HTTP checks, asset responses, and resume PDF integrity)
 - [ ] Browser production smoke check (route refreshes, resume game/view/download, themes, desktop/tablet/mobile layouts; no browser surface available during preparation)
 - [ ] Deployment
+
+- [x] Unify primary section titles using the current Projects heading typography and spacing; retain secondary case-study/nested hierarchy and remove decorative section dividers across pages.

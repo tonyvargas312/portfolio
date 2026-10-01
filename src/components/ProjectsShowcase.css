@@ -1,11 +1,8 @@
-﻿.projects-showcase {
+.projects-showcase {
   --stack-gap: var(--section-gap);
   width: min(92rem, calc(100vw - 2 * var(--page-gutter)));
   margin-inline: calc((100% - min(92rem, 100vw - 2 * var(--page-gutter))) / 2);
 }
-.projects-showcase__heading { margin-block-end: var(--space-8); }
-.projects-showcase__heading h2 { font-size: var(--text-3xl); }
-.projects-showcase__heading p { margin-block-start: var(--space-4); color: var(--color-text-muted); font-size: var(--text-lg); }
 .projects-showcase__filters {
   padding: var(--space-4);
   border: 1px solid var(--color-border);

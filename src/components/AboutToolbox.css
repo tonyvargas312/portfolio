@@ -2,11 +2,11 @@
   inline-size: min(92rem, calc(100vw - 2 * var(--page-gutter)));
   margin-inline: calc((100% - min(92rem, 100vw - 2 * var(--page-gutter))) / 2);
   padding-block-start: var(--space-12);
-  border-block-start: 1px solid var(--color-border);
+  
 }
-.about-toolbox > header h2 { font-size: var(--text-3xl); }
 .about-toolbox > header p { margin-block-start: var(--space-4); max-inline-size: 65ch; color: var(--color-text-muted); font-size: var(--text-lg); }
 .about-toolbox__category { margin-block-start: var(--space-12); }
+.about-toolbox > header + .about-toolbox__category { margin-block-start: var(--space-8); }
 .about-toolbox__category h3 { margin-block-end: var(--space-6); color: var(--color-accent); font-size: var(--text-lg); }
 .about-toolbox__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-4); margin: 0; padding: 0; list-style: none; }
 .about-toolbox__item { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); min-inline-size: 0; text-align: center; }

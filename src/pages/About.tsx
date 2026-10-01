@@ -17,7 +17,7 @@ function Paragraphs({ paragraphs, highlights = [] }: { paragraphs: readonly stri
 function AboutSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
     <section className="about-page__section" aria-labelledby={id}>
-      <h2 id={id}>{title}</h2>
+      <h2 className="section-title" id={id}>{title}</h2>
       <div className="about-page__article">{children}</div>
     </section>
   )
@@ -47,7 +47,7 @@ function About() {
       </AboutSection>
       <section className="about-page__beyond" aria-labelledby="about-beyond">
         <div className="about-page__article stack">
-          <h2 id="about-beyond">Beyond software</h2>
+          <h2 className="section-title" id="about-beyond">Beyond software</h2>
           <Paragraphs paragraphs={beyondSoftware} highlights={['Monteverde, Costa Rica', 'photography', 'Russian as a third language']} />
         </div>
         <PersonalPhotoCarousel />

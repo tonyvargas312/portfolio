@@ -26,7 +26,7 @@ function AboutToolbox() {
   return (
     <section className="about-toolbox" aria-labelledby="about-tools">
       <header>
-        <h2 id="about-tools">Tools &amp; Technologies</h2>
+        <h2 className="section-title" id="about-tools">Tools &amp; Technologies</h2>
         <p>The technologies, platforms, and tools I use to build, experiment, and learn.</p>
       </header>
       {technologyGroups.map(({ title, tools }, index) => (

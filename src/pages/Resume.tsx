@@ -32,8 +32,8 @@ function Resume() {
 
   return (
     <div className="resume-page">
-      <header className="stack">
-        <h1>Resume</h1>
+      <header className="section-heading">
+        <h1 className="section-title">Resume</h1>
         <p className="resume-page__intro">I seem to have misplaced my resume. Can you find it?</p>
       </header>
       <section className="resume-map" aria-label="Find the resume" aria-describedby="resume-map-description">

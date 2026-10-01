@@ -77,6 +77,25 @@ h4 { font-size: var(--text-lg); }
 h5,
 h6 { font-size: var(--text-body); }
 
+/* Canonical Projects typography, shared by primary section titles. */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-text);
+  text-align: left;
+}
+/* Case-study sections remain secondary to the project name. */
+.section-title--secondary { font-size: var(--text-2xl); }
+.section-heading { margin-block-end: var(--space-8); }
+.section-heading > p {
+  margin-block-start: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
 small { font-size: var(--text-small); }
 strong { font-weight: var(--weight-emphasis); }
 
