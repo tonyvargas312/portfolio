@@ -1,9 +1,9 @@
 .background-photo-stack { --stack-offset: 110px; inline-size: 100%; min-inline-size: 0; padding-block: calc(var(--stack-offset) * 1.6); }
 .background-photo-stack[data-single='true'] { padding-block: 0; }
-.background-photo-stack__stage { position: relative; aspect-ratio: 858 / 748; isolation: isolate; }
+.background-photo-stack__stage { position: relative; aspect-ratio: var(--aspect-about-media); isolation: isolate; }
 .background-photo-stack__slide { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; border-radius: var(--space-2); transform: translateY(calc(var(--slide-offset) * var(--stack-offset))) scale(var(--slide-scale)); opacity: var(--slide-opacity); }
 .background-photo-stack__slide[hidden] { display: none; }
-.background-photo-stack__slide .about-page__portrait.about-page__portrait { aspect-ratio: 858 / 748; border: 1px solid var(--glow-edge); }
+.background-photo-stack__slide .about-page__portrait.about-page__portrait { aspect-ratio: var(--aspect-about-media); border: 1px solid var(--glow-edge); }
 .background-photo-stack__slide[data-active='true'] .about-page__portrait.about-page__portrait { box-shadow: var(--glow-media); }
 .background-photo-stack__slide:not([data-active='true']) .about-page__portrait.about-page__portrait { box-shadow: none; }
 button.background-photo-stack__slide { cursor: pointer; }

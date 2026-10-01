@@ -2,8 +2,7 @@ import type { ReactNode } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import AboutBiography from '../components/AboutBiography'
 import BackgroundPhotoStack from '../components/BackgroundPhotoStack'
-import PortfolioPhoto from '../components/PortfolioPhoto'
-import '../components/PersonalPhotoCarousel.css'
+import PersonalPhotoCarousel from '../components/PersonalPhotoCarousel'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
 import {
@@ -61,7 +60,7 @@ function About() {
           <h2 id="about-beyond">Beyond software</h2>
           <Paragraphs paragraphs={beyondSoftware} highlights={['Monteverde, Costa Rica', 'photography', 'Russian as a third language']} />
         </div>
-        <div className="personal-photos"><PortfolioPhoto filename="hummingbird.jpeg" alt="Hummingbird photographed in nature" presentation="personal" /></div>
+        <PersonalPhotoCarousel />
       </section>
       <AboutSection id="about-currently" title="Currently"><Paragraphs paragraphs={currentFocus} highlights={['Data Engineering', 'Data Architecture', 'artificial intelligence', 'neural networks', 'neuroscience']} /></AboutSection>
       <Connect description={aboutConnectDescription} />

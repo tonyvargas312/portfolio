@@ -4,7 +4,6 @@ import ArrowIcon from './ArrowIcon'
 import './ProjectGallery.css'
 import './PersonalPhotoCarousel.css'
 
-type PhotoRecord = { storage_path: string | null; alt_text: string | null }
 type Photo = { src: string; alt: string }
 
 function PersonalPhotoCarousel() {
@@ -16,27 +15,22 @@ function PersonalPhotoCarousel() {
   const viewportId = useId()
 
   useEffect(() => {
-    const request = new AbortController()
     let mounted = true
     async function loadPhotos() {
       try {
-        const { supabase } = await import('../lib/supabase')
+        const { getPortfolioPhotoUrl } = await import('../lib/portfolioPhotos')
         if (!mounted) return
-        const { data, error } = await supabase.schema('public').from('portfolio_photos')
-          .select('storage_path, alt_text').eq('section', 'beyond-software')
-          .eq('is_published', true).order('sort_order', { ascending: true })
-          .abortSignal(request.signal).returns<PhotoRecord[]>()
-        if (!mounted || error) return
-        setPhotos((data || []).flatMap((record) => {
-          if (!record.storage_path?.trim()) return []
-          const { data: storage } = supabase.storage.from('portfolio-photos').getPublicUrl(record.storage_path)
-          return [{ src: storage.publicUrl, alt: record.alt_text?.trim() || 'A personal interest outside software' }]
-        }))
-      } catch { /* Keep the placeholder without exposing configuration or database errors. */ }
+        // Objects were replaced in place: refresh once per page load, not per slide.
+        const refreshToken = Date.now().toString()
+        setPhotos([
+          { src: getPortfolioPhotoUrl('hummingbird.jpeg', refreshToken), alt: 'Hummingbird photographed in nature' },
+          { src: getPortfolioPhotoUrl('motocross.jpeg', refreshToken), alt: 'Anthony riding motocross' },
+        ])
+      } catch { /* Keep the existing fallback without exposing configuration errors. */ }
       finally { if (mounted) setLoading(false) }
     }
     void loadPhotos()
-    return () => { mounted = false; request.abort() }
+    return () => { mounted = false }
   }, [])
 
   const count = photos.length

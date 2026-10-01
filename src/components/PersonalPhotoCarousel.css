@@ -20,7 +20,7 @@
 
 .personal-photos__viewport {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: var(--aspect-about-media);
   overflow: hidden;
   border-radius: var(--space-2);
   background: var(--color-surface);
