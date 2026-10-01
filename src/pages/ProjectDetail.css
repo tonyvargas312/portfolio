@@ -1,5 +1,6 @@
 .project-detail { inline-size: min(var(--width-wide), calc(100vw - 2 * var(--page-gutter))); margin-inline: calc((100% - min(var(--width-wide), 100vw - 2 * var(--page-gutter))) / 2); }
-.project-detail__header { margin-block-end: var(--space-12); }
+.project-detail__header { margin-block-end: var(--space-8); }
+.project-detail__information { margin-block-start: var(--space-8); }
 .project-detail__header h1 { margin-block-start: var(--space-8); max-inline-size: 22ch; font-size: var(--text-3xl); overflow-wrap: anywhere; }
 .project-detail__category { margin-block: var(--space-4); color: var(--color-accent); font-size: var(--text-small); }
 .project-detail__summary { max-inline-size: 70ch; font-size: var(--text-lg); line-height: var(--leading-body); }

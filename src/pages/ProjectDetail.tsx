@@ -25,15 +25,17 @@ function ProjectDetail({ project, details }: { project: Project; details: Projec
       <header className="project-detail__header">
         <Link to="/projects" className="project-detail__back">Back to Projects</Link>
         <h1>{project.title}</h1>
+      </header>
+      <div className="project-detail__hero-media">
+        {cover ? <ProjectVisual image={cover} /> : <div className="project-detail__preview"><span>Project preview</span><p>Visual documentation has not been added yet.</p></div>}
+      </div>
+      <div className="project-detail__information">
         <p className="project-detail__category">{project.category}</p>
         <p className="project-detail__summary">{project.shortDescription}</p>
         <dl className="project-detail__metadata">
           <div><dt>Status</dt><dd>{project.status}</dd></div>
           {project.lastUpdated && project.lastUpdated !== 'To be confirmed' && <div><dt>Last updated</dt><dd>{project.lastUpdated}</dd></div>}
         </dl>
-      </header>
-      <div className="project-detail__hero-media">
-        {cover ? <ProjectVisual image={cover} /> : <div className="project-detail__preview"><span>Project preview</span><p>Visual documentation has not been added yet.</p></div>}
       </div>
       <div className="project-detail__sections">
         <section aria-labelledby="overview-title"><h2 id="overview-title">Overview</h2><div className="project-detail__copy"><p>{details.overview || project.shortDescription}</p><p className="project-detail__note">{project.status}</p></div></section>
