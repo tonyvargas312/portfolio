@@ -130,6 +130,8 @@
 
 - [x] Dark-only glow color tuning (near-white teal primary, faint aqua support and pale focus/hover edges; unchanged light-mode recipe and all shadow geometry)
 
+- [x] Background stacked-photo layout (left 858:748 media frame, right unchanged copy, extensible relevant photo list, image-controlled depth navigation and reduced-motion transitions; single childhood photo until more are supplied)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

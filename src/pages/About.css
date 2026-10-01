@@ -164,5 +164,11 @@
 }
 
 
-/* Background reuses the biography row and portrait dimensions. */
+/* Background keeps article typography with its own stacked photo composition. */
 .about-page__background { grid-template-columns: minmax(0, 1fr); }
+
+.about-page__background-layout { display: grid; gap: var(--space-8); align-items: center; }
+.about-page__background-layout > * { min-inline-size: 0; }
+@media (min-width: 56rem) {
+  .about-page__background-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: var(--space-12); }
+}
