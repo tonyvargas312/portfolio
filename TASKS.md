@@ -84,6 +84,8 @@
 - [x] Contact / social links (responsive Connect section; live profile and email links)
 - [x] Hero primary Connect CTA targeting the homepage Connect anchor
 
+- [x] Wide project case-study presentation (strong hero, honest media fallback, editorial sections, technology badges, data-driven media grid, working resources only, and bottom project navigation)
+
 ## Phase 4 — Projects
 
 - [x] Clean collapsed project tags (only active filter and +; all data-derived tags available when expanded)
