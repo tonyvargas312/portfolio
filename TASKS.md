@@ -134,6 +134,8 @@
 
 - [x] Updated Beyond Software media orientation (hummingbird/motocross Storage carousel, shared 858:748 frame, per-page refresh token for replaced objects, and preserved controls/glow)
 
+- [x] Beyond Software 3D stack correction (six circular card states, presentation-only two-photo clones, image/keyboard/vertical-swipe navigation; restored Background static portrait on right)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

@@ -1,89 +1,82 @@
-import { useEffect, useId, useState } from 'react'
-import type { KeyboardEvent } from 'react'
-import ArrowIcon from './ArrowIcon'
-import './ProjectGallery.css'
+import { useEffect, useRef, useState } from 'react'
+import type { KeyboardEvent, TouchEvent } from 'react'
 import './PersonalPhotoCarousel.css'
+import { photoCardState } from '../lib/photoCardState'
 
-type Photo = { src: string; alt: string }
+export type PersonalPhoto = { src: string; alt: string }
 
-function PersonalPhotoCarousel() {
-  const [photos, setPhotos] = useState<Photo[]>([])
-  const [loading, setLoading] = useState(true)
+function PersonalPhotoCarousel({ initialPhotos }: { initialPhotos?: readonly PersonalPhoto[] }) {
+  const [photos, setPhotos] = useState<readonly PersonalPhoto[]>(initialPhotos ?? [])
+  const [loading, setLoading] = useState(!initialPhotos)
   const [active, setActive] = useState(0)
   const [loaded, setLoaded] = useState<string[]>([])
   const [failed, setFailed] = useState<string[]>([])
-  const viewportId = useId()
-
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
+  const suppressClickUntil = useRef(0)
   useEffect(() => {
+    if (initialPhotos) return
     let mounted = true
     async function loadPhotos() {
       try {
         const { getPortfolioPhotoUrl } = await import('../lib/portfolioPhotos')
         if (!mounted) return
-        // Objects were replaced in place: refresh once per page load, not per slide.
         const refreshToken = Date.now().toString()
         setPhotos([
           { src: getPortfolioPhotoUrl('hummingbird.jpeg', refreshToken), alt: 'Hummingbird photographed in nature' },
           { src: getPortfolioPhotoUrl('motocross.jpeg', refreshToken), alt: 'Anthony riding motocross' },
         ])
-      } catch { /* Keep the existing fallback without exposing configuration errors. */ }
+      } catch { /* Preserve a clean fallback without exposing configuration errors. */ }
       finally { if (mounted) setLoading(false) }
     }
     void loadPhotos()
     return () => { mounted = false }
-  }, [])
-
+  }, [initialPhotos])
   const count = photos.length
-  const index = count ? active % count : 0
-  const photo = photos[index]
-  const imageFailed = photo && failed.includes(photo.src)
-  const imageLoaded = photo && loaded.includes(photo.src)
-  const busy = loading || Boolean(photo && !imageFailed && !imageLoaded)
-
+  const current = count ? active % count : 0
   function move(direction: number) {
-    if (count > 1) setActive((current) => (current + direction + count) % count)
+    if (count > 1) setActive((index) => (index + direction + count) % count)
   }
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || count < 2) return
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
       event.preventDefault()
-      move(event.key === 'ArrowLeft' ? -1 : 1)
+      move(event.key === 'ArrowUp' ? -1 : 1)
     }
   }
-
-  return (
-    <div className="personal-photos" role="region" aria-roledescription="carousel"
-      aria-label="Interests outside software photos" tabIndex={0} onKeyDown={handleKeyDown}>
-      <div className="personal-photos__viewport" id={viewportId} aria-busy={busy}
-        role="group" aria-roledescription="slide" aria-label={count ? `Photo ${index + 1} of ${count}` : 'Personal photos'}>
-        {photo && !imageFailed && (
-          <img key={photo.src} src={photo.src} alt={photo.alt} loading="lazy" decoding="async"
-            style={{ visibility: imageLoaded ? 'visible' : 'hidden' }}
-            onLoad={() => setLoaded((current) => [...current, photo.src])}
-            onError={() => setFailed((current) => [...current, photo.src])} />
-        )}
-        {(!photo || imageFailed || !imageLoaded) && (
-          <div className="personal-photos__placeholder">
-            <p>{busy ? 'Loading personal photos…' : 'Personal photos coming soon.'}</p>
-          </div>
-        )}
-      </div>
-      {count > 1 && (
-        <div className="project-gallery__controls personal-photos__controls">
-          <button type="button" aria-label="Previous personal photo" aria-controls={viewportId} onClick={() => move(-1)}><ArrowIcon direction="left" /></button>
-          <div className="project-gallery__dots" role="group" aria-label="Choose a personal photo">
-            {photos.map((item, dot) => (
-              <button key={`${item.src}-${dot}`} type="button" aria-label={`Show personal photo ${dot + 1}`}
-                aria-current={dot === index ? 'true' : undefined} aria-controls={viewportId} onClick={() => setActive(dot)}>
-                <span aria-hidden="true" />
-              </button>
-            ))}
-          </div>
-          <button type="button" aria-label="Next personal photo" aria-controls={viewportId} onClick={() => move(1)}><ArrowIcon direction="right" /></button>
-        </div>
-      )}
+  function endTouch(event: TouchEvent<HTMLDivElement>) {
+    const start = touchStart.current
+    touchStart.current = null
+    const end = event.changedTouches[0]
+    if (!start || !end || count < 2) return
+    const deltaY = end.clientY - start.y
+    if (Math.abs(deltaY) > 45 && Math.abs(deltaY) > Math.abs(end.clientX - start.x)) {
+      suppressClickUntil.current = Date.now() + 400
+      move(deltaY < 0 ? 1 : -1)
+    }
+  }
+  // Clone only the presentation, never the unique media list.
+  const cards = photos.flatMap((photo, index) => {
+    const state = photoCardState(index, current, count)
+    const primary = { photo, index, state, key: `photo-${index}` }
+    return count === 2 ? [primary, { photo, index, state: state === 'center' ? 'hidden' as const : 'up-1' as const, key: `clone-${index}` }] : [primary]
+  })
+  return <div className="personal-photos" role="region" aria-roledescription="carousel" aria-label="Interests outside software photos" tabIndex={0} onKeyDown={handleKeyDown}
+    onTouchStart={(event) => { const touch = event.touches[0]; if (touch) touchStart.current = { x: touch.clientX, y: touch.clientY } }} onTouchEnd={endTouch} onTouchCancel={() => { touchStart.current = null }}>
+    <div className="personal-photos__track" aria-busy={loading}>
+      {!count && <div className="personal-photos__fallback"><p>{loading ? 'Loading personal photos?' : 'Personal photos unavailable.'}</p></div>}
+      {cards.map(({ photo, index, state, key }) => {
+        const hidden = state === 'hidden'
+        const center = state === 'center'
+        const ready = loaded.includes(photo.src)
+        const unavailable = failed.includes(photo.src)
+        return <button key={key} type="button" className={`personal-photos__card ${state}`} aria-label={center ? photo.alt : state.startsWith('up') ? `Previous photo: ${photo.alt}` : `Next photo: ${photo.alt}`}
+          aria-disabled={center} aria-hidden={hidden} tabIndex={hidden || center ? -1 : 0} onClick={() => { if (!center && Date.now() >= suppressClickUntil.current) setActive(index) }}>
+          {!unavailable && <img src={photo.src} alt={photo.alt} decoding="async" style={{ visibility: ready ? 'visible' : 'hidden' }} onLoad={() => setLoaded((previous) => previous.includes(photo.src) ? previous : [...previous, photo.src])} onError={() => setFailed((previous) => previous.includes(photo.src) ? previous : [...previous, photo.src])} />}
+          {(!ready || unavailable) && <span className="personal-photos__placeholder">{unavailable ? 'Photo unavailable.' : 'Loading photo?'}</span>}
+        </button>
+      })}
     </div>
-  )
+    {count > 1 && <p className="personal-photos__status" role="status" aria-live="polite">Photo {current + 1} of {count}</p>}
+  </div>
 }
-
 export default PersonalPhotoCarousel

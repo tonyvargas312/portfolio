@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import AboutBiography from '../components/AboutBiography'
-import BackgroundPhotoStack from '../components/BackgroundPhotoStack'
+import PortfolioPhoto from '../components/PortfolioPhoto'
 import PersonalPhotoCarousel from '../components/PersonalPhotoCarousel'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
@@ -33,8 +33,8 @@ function About() {
       <AboutBiography />
       <section className="about-page__section about-page__background" aria-labelledby="about-background">
         <h2 id="about-background">Background</h2>
-        <div className="about-page__background-layout">
-          <BackgroundPhotoStack />
+        <div className="about-biography__row about-biography__row--text-first">
+          <div className="about-page__personal-photo"><PortfolioPhoto filename="childhood.jpeg" alt="Anthony as a child" /></div>
           <div className="about-page__introduction-text">
             <Paragraphs paragraphs={background} highlights={['Computer Engineering', 'Data Engineering', 'systems integration']} />
           </div>
