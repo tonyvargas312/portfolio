@@ -13,7 +13,7 @@ function EducationCard({ item, featured = false }: EducationCardProps) {
       aria-labelledby={`${item.id}-title`}
     >
       <div className="education-card__visual" aria-hidden="true">
-        <span className="education-card__visual-label">{item.visualPlaceholder}</span>
+        <span className="education-card__visual-label">{item.visualPlaceholder.replace(/ to come$/, '')}</span>
       </div>
       <div className="education-card__content">
         <p className="education-card__category">{item.category}</p>

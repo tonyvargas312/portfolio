@@ -43,6 +43,16 @@
 
 ## Phase 3 — Home
 
+- [x] Connect closing section restyle (four full-card icon links, preserved contact data and Resume route, wide responsive grid, theme surfaces and visible keyboard focus)
+
+- [x] Education visual restyle (wide section, Project-style rounded cards, meaningful preview slots, stronger typography and accent links; preserved layout, data and expansion)
+
+- [x] Responsive Home About heading placement (right-column heading aligned to photo top on desktop; single heading above photo on stacked layouts)
+
+- [x] Wider editorial Home About (32px desktop gutters, expanded biography width, 30/70 columns, paragraph-only justification, and left-aligned mobile copy)
+
+- [x] Editorial Home About refinement (supplied Tony biography, five turquoise highlights, larger readable paragraphs, top-aligned one-third portrait/two-thirds text, and minimal About link)
+
 - [x] Home About portrait redesign (shared Supabase About photo, left-photo/right-text layout, stronger heading, and preserved concise copy/CTA)
 - [x] Hero fixed two-line roles (Computer Engineer, Software Developer, Data Engineer; stable responsive box and preserved motion accessibility)
 
@@ -87,6 +97,8 @@
 - [x] Contact information
 
 ## Phase 6 — Polish
+
+- [x] UI consistency pass (removed decorative arrows, unified Hero control typography, centered SVG menu icons, and mobile icon-only theme switch with system resolution and saved manual preference)
 
 - [x] Reference typography (verified Roboto Mono/Inter, licensed self-hosted fonts, reusable responsive typography tokens)
 

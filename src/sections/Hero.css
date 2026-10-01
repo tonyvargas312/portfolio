@@ -51,7 +51,10 @@
   justify-content: center;
   min-block-size: 2.75rem;
   padding-block: var(--space-3);
-  font-weight: var(--weight-heading);
+  font-family: var(--font-ui);
+  font-size: var(--text-nav);
+  font-weight: var(--weight-ui);
+  letter-spacing: normal;
 }
 
 .hero__primary {

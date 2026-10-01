@@ -70,6 +70,8 @@
   place-items: center;
   min-inline-size: 3rem;
   min-block-size: 3rem;
+  inline-size: 3rem;
+  block-size: 3rem;
   padding: var(--space-2);
   border: 0;
   background: transparent;
@@ -84,13 +86,25 @@
 .navbar__dropdown .navbar__links { align-items: stretch; flex-direction: column; gap: 0; }
 .navbar__dropdown .navbar__link { display: flex; }
 .navbar__theme { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-small); }
-.navbar__theme select {
-  min-block-size: 2.75rem;
-  padding: var(--space-2) var(--space-3);
+.navbar__theme-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  inline-size: 5rem;
+  block-size: 2.75rem;
+  padding: var(--space-1);
   border: 1px solid var(--color-border);
+  border-radius: 999px;
   background: var(--color-surface);
   color: var(--color-text);
+  cursor: pointer;
 }
+.navbar__theme-switch img { position: relative; inline-size: 1.5rem; block-size: 1.5rem; object-fit: contain; }
+.navbar__theme-thumb { position: absolute; inset-block: var(--space-1); inset-inline-start: var(--space-1); inline-size: calc(50% - var(--space-1)); border-radius: 999px; background: color-mix(in srgb, var(--color-accent) 20%, var(--color-surface)); border: 1px solid var(--color-accent); }
+.navbar__theme-switch[aria-checked='true'] .navbar__theme-thumb { inset-inline-start: 50%; }
+.navbar__theme-switch:hover { border-color: var(--color-accent); }
+.navbar__theme-switch:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .navbar__skip {
   position: absolute;
   inset-block-start: var(--space-2);
@@ -196,6 +210,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .navbar__theme-thumb { transition: inset-inline-start 180ms ease; }
   .navbar__link,
   .navbar__brand { transition: color 150ms ease; }
 }

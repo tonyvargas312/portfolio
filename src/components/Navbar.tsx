@@ -22,12 +22,22 @@ function Navbar() {
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useState<Theme>(() => {
     const current = document.documentElement.dataset.theme
-    return current === 'light' || current === 'dark' ? current : 'system'
+    if (current === 'light' || current === 'dark') return current
+    try {
+      const saved = localStorage.getItem('portfolio-theme')
+      if (saved === 'light' || saved === 'dark') return saved
+    } catch { /* Fall back to the system theme when storage is unavailable. */ }
+    return 'system'
   })
   const toggleRef = useRef<HTMLButtonElement>(null)
   const prefersDark = useSyncExternalStore(subscribeToSystemTheme, systemIsDark, () => false)
   const isDark = theme === 'dark' || (theme === 'system' && prefersDark)
   const close = () => setOpen(false)
+
+  useEffect(() => {
+    if (theme === 'system') delete document.documentElement.dataset.theme
+    else document.documentElement.dataset.theme = theme
+  }, [theme])
 
   useEffect(() => {
     if (!open) return
@@ -51,6 +61,10 @@ function Navbar() {
     setTheme(value)
     if (value === 'system') delete document.documentElement.dataset.theme
     else document.documentElement.dataset.theme = value
+    try {
+      if (value === 'system') localStorage.removeItem('portfolio-theme')
+      else localStorage.setItem('portfolio-theme', value)
+    } catch { /* Persistence is optional when browser storage is restricted. */ }
   }
 
   const mainLinks = primaryLinks.map(({ label, href }) => (
@@ -75,16 +89,20 @@ function Navbar() {
         </div>
         <button ref={toggleRef} className="navbar__toggle" type="button" aria-expanded={open}
           aria-controls="navbar-mobile-menu" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setOpen((current) => !current)}>
-          <span aria-hidden="true">{open ? '×' : '☰'}</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+            <path d={open ? 'M5 5l14 14M19 5 5 19' : 'M4 6h16M4 12h16M4 18h16'} />
+          </svg>
         </button>
       </div>
       <div className="container navbar__dropdown" id="navbar-mobile-menu" hidden={!open}>
         <nav aria-label="Mobile primary"><ul className="navbar__links">{mainLinks}</ul></nav>
         <div className="navbar__theme">
-          <label htmlFor="navbar-theme">Theme</label>
-          <select id="navbar-theme" value={theme} onChange={(event) => selectTheme(event.target.value as Theme)}>
-            <option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option>
-          </select>
+          <button className="navbar__theme-switch" type="button" role="switch" aria-checked={isDark}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={() => selectTheme(isDark ? 'light' : 'dark')}>
+            <span className="navbar__theme-thumb" aria-hidden="true" />
+            <img src={sunIcon} alt="" /><img src={moonIcon} alt="" />
+          </button>
         </div>
       </div>
     </header>
