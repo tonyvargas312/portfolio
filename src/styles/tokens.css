@@ -58,8 +58,8 @@
   --color-accent: #14675e;
   --color-accent-hover: #0c4c45;
   --color-focus: var(--color-accent);
-  --bubble-glow-strength: 8%;
-  --bubble-glow-hover-strength: 14%;
+  --bubble-glow-strength: 14%;
+  --bubble-glow-hover-strength: 20%;
   --color-particle: #344e49;
   --particle-opacity-min: 0.2;
   --particle-opacity-max: 0.48;
@@ -76,8 +76,8 @@
     --color-border: #414c44;
     --color-accent: #8ed8c8;
     --color-accent-hover: #b4eadf;
-    --bubble-glow-strength: 12%;
-    --bubble-glow-hover-strength: 20%;
+    --bubble-glow-strength: 24%;
+    --bubble-glow-hover-strength: 30%;
     --color-particle: #f1f2ec;
     --particle-opacity-min: 0.22;
     --particle-opacity-max: 0.6;
@@ -94,8 +94,8 @@
   --color-border: #414c44;
   --color-accent: #8ed8c8;
   --color-accent-hover: #b4eadf;
-  --bubble-glow-strength: 12%;
-  --bubble-glow-hover-strength: 20%;
+  --bubble-glow-strength: 24%;
+  --bubble-glow-hover-strength: 30%;
   --color-particle: #f1f2ec;
   --particle-opacity-min: 0.22;
   --particle-opacity-max: 0.6;
@@ -121,7 +121,9 @@
 }
 
 :root {
-  --bubble-glow: 0 0 10px 1px color-mix(in srgb, var(--color-accent) var(--bubble-glow-strength), transparent);
-  --bubble-glow-hover: 0 0 14px 1px color-mix(in srgb, var(--color-accent) var(--bubble-glow-hover-strength), transparent);
-  --bubble-pill-glow: 0 0 6px color-mix(in srgb, var(--color-accent) var(--bubble-glow-strength), transparent);
+  --bubble-edge: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  --bubble-glow: 0 0 8px 1px color-mix(in srgb, var(--color-accent) var(--bubble-glow-strength), transparent), 0 0 14px rgba(1, 160, 206, .08);
+  --bubble-glow-hover: 0 0 10px 1px color-mix(in srgb, var(--color-accent) var(--bubble-glow-hover-strength), transparent), 0 0 16px rgba(1, 160, 206, .12);
+  --bubble-glow-selected: 0 0 0 1px color-mix(in srgb, var(--color-accent) 35%, transparent), var(--bubble-glow-hover);
+  --bubble-pill-glow: 0 0 7px color-mix(in srgb, var(--color-accent) var(--bubble-glow-strength), transparent);
 }

@@ -124,6 +124,8 @@
 
 - [x] Sloth palette particle refinement (29 active particles, modest faster additions, majority neutral with exact brand accent sources, responsive density and light-mode pale-color contrast; stars and Hero unchanged)
 
+- [x] Global bubble and particle intensity polish (brighter minority brand particles, shared card/pill perimeter states across routes, theme-aware edges and intact reduced-motion behavior)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

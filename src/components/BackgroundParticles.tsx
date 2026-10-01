@@ -23,6 +23,7 @@ const particleColors: Record<number, string> = {
   9: '#40718C', 11: '#01A0CE', 13: '#0BE5C9', 15: '#C0754E',
   17: '#558BAA', 19: '#0BE5C9', 21: '#01A0CE', 23: '#40718C',
   25: '#FDE6BA', 27: '#0BE5C9',
+  2: '#0BE5C9', 10: '#01A0CE', 18: '#558BAA',
 }
 const activeParticles = Array.from({ length: 29 }, (_, index) => ({
   left: `${5 + variation(index, 1) * 90}%`,
@@ -31,7 +32,7 @@ const activeParticles = Array.from({ length: 29 }, (_, index) => ({
   '--active-duration': `${index >= 24 ? 5 + variation(index, 4) * 3 : 6 + variation(index, 4) * 6 + (index % 7 === 0 ? 3 : 0)}s`,
   '--active-color': particleColors[index] ?? 'var(--color-particle)',
   '--active-delay': `${-variation(index, 5) * 15}s`,
-  '--active-opacity': `${0.65 + variation(index, 6) * 0.35}`,
+  '--active-opacity': `${particleColors[index] ? 0.85 + variation(index, 6) * 0.15 : 0.65 + variation(index, 6) * 0.35}`,
   '--float-x': `${20 + variation(index, 7) * 15}px`,
   '--float-y': `${-(30 + variation(index, 8) * 15)}px`,
   '--late-x': `${-(12 + variation(index, 9) * 10)}px`,
