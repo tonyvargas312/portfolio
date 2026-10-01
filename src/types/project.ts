@@ -29,12 +29,21 @@ export type ProjectUpdate = {
 export type ProjectResource = {
   id: string
   title: string
-  kind: 'PDF' | 'Design document' | 'Requirements document' | 'GitHub' | 'External link' | 'Download'
+  kind: 'PDF' | 'Design document' | 'Requirements document' | 'GitHub' | 'External link' | 'Download' | 'Notebook' | 'Diagram' | 'Model results' | 'Screenshots'
   url: string | null
   download?: boolean
 }
 
 export type ProjectDetails = {
+  overview?: string
+  technologiesNote?: string
+  architecture?: readonly string[]
+  dataFlow?: readonly string[]
+  aiDetails?: readonly string[]
+  modelEvaluation?: readonly string[]
+  qaValidation?: readonly string[]
+  privacySecurity?: readonly string[]
+  gallery?: readonly ProjectImage[]
   description: string
   keyFeatures: readonly string[]
   developmentStatus: string

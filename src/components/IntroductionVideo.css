@@ -6,6 +6,7 @@
   background: var(--color-surface);
 }
 
+.introduction-video iframe,
 .introduction-video video,
 .introduction-video__placeholder {
   position: absolute;
@@ -37,8 +38,4 @@
   background: var(--color-surface);
 }
 
-.introduction-video__placeholder span {
-  display: block;
-  margin-block-start: var(--space-2);
-  font-size: var(--text-small);
-}
+.introduction-video iframe { border: 0; }

@@ -27,14 +27,17 @@
 .education-preview__controls {
   display: flex;
   justify-content: center;
-  margin-block-start: var(--space-6);
+  margin-block-start: var(--space-8);
 }
 
 .education-preview__toggle {
+  display: grid;
+  place-items: center;
   min-inline-size: 2.75rem;
   min-block-size: 2.75rem;
   padding: var(--space-2);
-  border: 0;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 50%;
   background: transparent;
   color: var(--color-text);
   cursor: pointer;
@@ -42,9 +45,21 @@
 
 .education-preview__toggle:hover {
   color: var(--color-accent-hover);
+  border-color: currentColor;
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-background));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .education-preview__toggle {
+    transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+  }
 }
 
 @media (min-width: 40rem) {
+  .education-preview__controls {
+    margin-block-start: var(--space-12);
+  }
+
   .education-preview {
     padding-block-start: var(--space-16);
   }

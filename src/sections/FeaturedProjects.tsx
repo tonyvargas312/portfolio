@@ -1,4 +1,7 @@
+import { useState } from 'react'
+import type { KeyboardEvent } from 'react'
 import ProjectPreview from '../components/ProjectPreview'
+import ArrowIcon from '../components/ArrowIcon'
 import type { Project } from '../types/project'
 import './FeaturedProjects.css'
 
@@ -48,7 +51,7 @@ function FeaturedProjects({ projects: featuredProjects }: { projects: readonly P
         </div>
         <div className="featured-projects__controls">
             <button type="button" onClick={() => moveProject(-1)} aria-label="Previous project" aria-controls="featured-projects-viewport">
-              <span aria-hidden="true">←</span>
+              <ArrowIcon direction="left" />
             </button>
             <span className="featured-projects__position" role="status" aria-atomic="true" aria-label={`Project ${activeIndex + 1} of ${count}: ${featuredProjects[activeIndex].title}`}>
               {featuredProjects[activeIndex].title}
@@ -69,7 +72,7 @@ function FeaturedProjects({ projects: featuredProjects }: { projects: readonly P
             ))}
           </div>
           <button type="button" onClick={() => moveProject(1)} aria-label="Next project" aria-controls="featured-projects-viewport">
-            <span aria-hidden="true">→</span>
+            <ArrowIcon direction="right" />
           </button>
         </div>
       </div>
@@ -78,5 +81,3 @@ function FeaturedProjects({ projects: featuredProjects }: { projects: readonly P
 }
 
 export default FeaturedProjects
-import { useState } from 'react'
-import type { KeyboardEvent } from 'react'

@@ -1,24 +1,34 @@
 import './IntroductionVideo.css'
 
 export type IntroductionVideoProps = {
+  youtubeId?: string
   src?: string
   poster?: string
   captions?: { src: string; language: string; label: string }
 }
 
-function IntroductionVideo({ src, poster, captions }: IntroductionVideoProps) {
+function IntroductionVideo({ youtubeId, src, poster, captions }: IntroductionVideoProps) {
   return (
     <div className="introduction-video">
-      {src ? (
+      {youtubeId ? (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}`}
+          title="Video introduction by Anthony Vargas"
+          loading="lazy"
+          allow="encrypted-media; picture-in-picture; fullscreen"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      ) : src ? (
         <video controls playsInline preload="none" poster={poster} aria-label="Video introduction by Anthony Vargas">
           <source src={src} />
           {captions && <track kind="captions" src={captions.src} srcLang={captions.language} label={captions.label} default />}
           Your browser does not support video. <a href={src}>Open the introduction video</a>.
         </video>
       ) : (
-        <div className="introduction-video__placeholder" role="img" aria-label="Video introduction placeholder. Video not yet available.">
+        <div className="introduction-video__placeholder" >
           {poster && <img src={poster} alt="" />}
-          <p>Video introduction <span>To be added</span></p>
+          <p>Video introduction coming soon.</p>
         </div>
       )}
     </div>

@@ -1,64 +1,76 @@
+import type { ReactNode } from 'react'
 import IntroductionVideo from '../components/IntroductionVideo'
 import Connect from '../sections/Connect'
-import { featuredEducation, credentialPreviews } from '../data/education'
-import { projects } from '../data/projects'
+import { featuredEducation } from '../data/education'
+import {
+  introduction, background, workingApproach, interests, educationDescription,
+  technologyGroups, beyondSoftware, currentFocus, aboutConnectDescription, personalPhoto,
+} from '../data/about'
 import './About.css'
 
-const education = [featuredEducation, ...credentialPreviews]
-const projectTools = [...new Set(projects.flatMap((project) => project.technologies))]
+function Paragraphs({ paragraphs }: { paragraphs: readonly string[] }) {
+  return <div className="reading-width stack">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+}
+
+function AboutSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
+  return (
+    <section className="about-page__section" aria-labelledby={id}>
+      <h2 id={id}>{title}</h2>
+      {children}
+    </section>
+  )
+}
 
 function About() {
   return (
     <div className="about-page">
       <IntroductionVideo />
       <header className="about-page__introduction">
-        <p className="about-page__eyebrow">About me</p>
-        <h1>Anthony Vargas</h1>
-        <p className="reading-width">I’m a Computer Engineering student interested in software development and Data Engineering. I enjoy learning through practical technical projects.</p>
+        <div className="about-page__introduction-text">
+          <p className="about-page__eyebrow">About me</p>
+          <h1>Anthony Vargas</h1>
+          <p className="about-page__role">Computer Engineering Student</p>
+          <Paragraphs paragraphs={introduction} />
+        </div>
+        <div className="about-page__portrait">
+          {personalPhoto ? (
+            <img src={personalPhoto.src} alt={personalPhoto.alt} loading="lazy" decoding="async" />
+          ) : (
+            <div className="about-page__portrait-placeholder">
+              <p>Personal photo coming soon.</p>
+            </div>
+          )}
+        </div>
       </header>
-      <section className="about-page__section" aria-labelledby="about-background">
-        <h2 id="about-background">Background</h2>
-        <div className="reading-width stack">
-          <p>Computer Engineering connects my studies with the things I build. I’m currently developing software, game, and university projects, exploring how technical ideas can become practical solutions.</p>
-          <p>I’m interested in Data Engineering and data-driven systems, alongside the software development work that brings those systems to life.</p>
-        </div>
-      </section>
-      <section className="about-page__section" aria-labelledby="about-process">
-        <h2 id="about-process">How I work</h2>
-        <div className="reading-width stack">
-          <p>I learn by building: trying an idea, experimenting with it, and using what I learn to improve the next version.</p>
-          <p>Hands-on experimentation and iterative development help me turn practical problems into manageable steps. Each project is an opportunity to keep learning.</p>
-        </div>
-      </section>
-      <section className="about-page__section" aria-labelledby="about-education">
-        <h2 id="about-education">Education &amp; Certifications</h2>
-        <ul className="about-page__education">
-          {education.map((item) => (
-            <li key={item.id}>
-              <p className="about-page__eyebrow">{item.category}</p>
-              <h3>{item.title}</h3>
-              <p className="about-page__muted">{item.provider}</p>
-              <p>{item.description}</p>
-              {item.status && <p className="about-page__muted">{item.status}</p>}
-              {item.date && <p className="about-page__muted">{item.date}</p>}
-              {item.detailsUrl && <a href={item.detailsUrl}>View details: {item.title}</a>}
-            </li>
+      <AboutSection id="about-background" title="Background"><Paragraphs paragraphs={background} /></AboutSection>
+      <AboutSection id="about-process" title="How I work"><Paragraphs paragraphs={workingApproach} /></AboutSection>
+      <AboutSection id="about-interests" title="What I’m interested in">
+        <div className="about-page__areas reading-width">
+          {interests.map(({ title, description }) => (
+            <div className="stack" key={title}><h3>{title}</h3><p>{description}</p></div>
           ))}
-        </ul>
-      </section>
-      <section className="about-page__section" aria-labelledby="about-tools">
-        <h2 id="about-tools">Tools &amp; Technologies</h2>
-        <div className="stack">
-          <p className="reading-width">Tools used across this portfolio and my documented project work.</p>
-          <div><h3>Portfolio development</h3><ul className="about-page__tools">{['React', 'TypeScript', 'Vite', 'ESLint'].map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
-          <div><h3>Project development</h3><ul className="about-page__tools">{projectTools.map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
         </div>
-      </section>
-      <section className="about-page__section" aria-labelledby="about-beyond">
-        <h2 id="about-beyond">Beyond software</h2>
-        <p className="reading-width about-page__muted">More about my personal interests will be added here.</p>
-      </section>
-      <Connect />
+      </AboutSection>
+      <AboutSection id="about-education" title="Education">
+        <div className="stack">
+          <h3>{featuredEducation.title}</h3>
+          <p className="about-page__muted">{featuredEducation.status}</p>
+          <Paragraphs paragraphs={educationDescription} />
+        </div>
+      </AboutSection>
+      <AboutSection id="about-tools" title="Tools & Technologies">
+        <div className="about-page__areas">
+          {technologyGroups.map(({ title, tools }) => (
+            <div key={title}>
+              <h3>{title}</h3>
+              <ul className="about-page__tools">{tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+      </AboutSection>
+      <AboutSection id="about-beyond" title="Beyond software"><Paragraphs paragraphs={beyondSoftware} /></AboutSection>
+      <AboutSection id="about-currently" title="Currently"><Paragraphs paragraphs={currentFocus} /></AboutSection>
+      <Connect description={aboutConnectDescription} />
     </div>
   )
 }

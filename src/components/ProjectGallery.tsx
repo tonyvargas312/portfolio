@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import type { KeyboardEvent } from 'react'
 import type { ProjectImage } from '../types/project'
+import ArrowIcon from './ArrowIcon'
 import './ProjectGallery.css'
 
 function ProjectGallery({ images, title }: { images: readonly ProjectImage[]; title: string }) {
@@ -31,14 +32,14 @@ function ProjectGallery({ images, title }: { images: readonly ProjectImage[]; ti
         Image {index + 1} of {count}{image?.caption ? ` — ${image.caption}` : ''}
       </p>
       {count > 1 && <div className="project-gallery__controls">
-        <button type="button" aria-label="Previous project image" aria-controls={viewportId} onClick={() => move(-1)}><span aria-hidden="true">←</span></button>
+        <button type="button" aria-label="Previous project image" aria-controls={viewportId} onClick={() => move(-1)}><ArrowIcon direction="left" /></button>
         <div className="project-gallery__dots" role="group" aria-label="Choose a project image">
           {Array.from({ length: count }, (_, dot) => (
             <button key={dot} type="button" aria-label={`Show project image ${dot + 1}`} aria-current={dot === index ? 'true' : undefined}
               aria-controls={viewportId} onClick={() => setActive(dot)}><span aria-hidden="true" /></button>
           ))}
         </div>
-        <button type="button" aria-label="Next project image" aria-controls={viewportId} onClick={() => move(1)}><span aria-hidden="true">→</span></button>
+        <button type="button" aria-label="Next project image" aria-controls={viewportId} onClick={() => move(1)}><ArrowIcon direction="right" /></button>
       </div>}
     </div>
   )

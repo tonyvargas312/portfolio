@@ -12,7 +12,7 @@ function Hero() {
           projects that turn ideas into practical solutions.
         </p>
         <div className="hero__actions">
-          <Link className="hero__primary" to="/projects">View Projects</Link>
+          <a className="hero__primary" href="/#connect">Connect</a>
           <Link className="hero__secondary" to="/resume">Resume</Link>
         </div>
       </div>

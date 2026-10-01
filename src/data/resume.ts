@@ -1,2 +1,6 @@
-// Add a local public path or hosted PDF URL when the resume is available.
-export const resumeDocument: { url: string | null } = { url: null }
+import resumePdfUrl from '../assets/documents/Anthony_Vargas_Arguedas_CV.pdf?url'
+
+export const resumeDocument = {
+  url: resumePdfUrl,
+  filename: 'Anthony_Vargas_Arguedas_CV.pdf',
+}

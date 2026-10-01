@@ -13,14 +13,7 @@ function Footer() {
         <ul className="footer__links">
           {socialLinks.map(({ label, href }) => (
             <li key={label}>
-              {href ? (
-                <a className="footer__link" href={href}>{label}</a>
-              ) : (
-                <span className="footer__placeholder" role="link" aria-disabled="true"
-                  aria-label={`${label} — coming soon`}>
-                  {label} <span className="footer__soon">Coming soon</span>
-                </span>
-              )}
+              <a className="footer__link" href={href} target="_blank" rel="noopener noreferrer">{label}</a>
             </li>
           ))}
         </ul>

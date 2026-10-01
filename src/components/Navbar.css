@@ -1,5 +1,7 @@
 ﻿.navbar { border-block-end: 1px solid var(--color-border); }
 .navbar__inner {
+  width: calc(100% - 2 * var(--page-gutter));
+  margin-inline: auto;
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -9,6 +11,9 @@
   min-inline-size: 0;
   margin-inline-end: auto;
   color: var(--color-text);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+  line-height: var(--leading-heading);
+  overflow-wrap: anywhere;
   font-weight: var(--weight-heading);
   letter-spacing: var(--tracking-heading);
   text-decoration: none;
@@ -23,7 +28,6 @@
   list-style: none;
 }
 .navbar__link,
-.navbar__placeholder,
 .navbar__brand {
   display: inline-flex;
   align-items: center;
@@ -33,31 +37,45 @@
 .navbar__link:hover,
 .navbar__brand:hover { color: var(--color-accent-hover); text-decoration: underline; }
 .navbar__link[aria-current='page'] { text-decoration: underline; text-decoration-color: var(--color-accent); }
-.navbar__placeholder { gap: var(--space-1); color: var(--color-text-muted); }
-.navbar__soon,
-.navbar__social { font-size: var(--text-small); }
 .navbar__desktop { display: none; }
+.navbar__controls { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
 .navbar__logo {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  inline-size: 2.25rem;
-  block-size: 2.25rem;
-  border: 1px dashed var(--color-border);
-  color: var(--color-text-muted);
-  font-size: 0.625rem;
+  inline-size: 3rem;
+  block-size: 3rem;
   text-decoration: none;
 }
-.navbar__logo:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.navbar__logo img { inline-size: 3rem; block-size: 3rem; object-fit: contain; }
+.navbar__theme-icon {
+  display: none;
+  place-items: center;
+  flex-shrink: 0;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.navbar__theme-icon img { inline-size: 2rem; block-size: 2rem; object-fit: contain; }
+.navbar__theme-icon:hover,
+.navbar__logo:hover { outline: 1px solid var(--color-accent); outline-offset: 3px; }
+.navbar__theme-icon:focus-visible,
+.navbar__logo:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .navbar__toggle {
   flex-shrink: 0;
-  min-inline-size: 2.75rem;
-  min-block-size: 2.75rem;
+  display: grid;
+  place-items: center;
+  min-inline-size: 3rem;
+  min-block-size: 3rem;
   padding: var(--space-2);
   border: 0;
   background: transparent;
   color: var(--color-text);
-  font-size: var(--text-lg);
+  font-size: 2rem;
+  line-height: 1;
   cursor: pointer;
 }
 .navbar__dropdown { padding-block-end: var(--space-6); }
@@ -73,7 +91,6 @@
   background: var(--color-surface);
   color: var(--color-text);
 }
-.navbar__theme--desktop { display: none; }
 .navbar__skip {
   position: absolute;
   inset-block-start: var(--space-2);
@@ -91,11 +108,27 @@
   white-space: nowrap;
 }
 @media (min-width: 64rem) {
-  .navbar__inner { gap: var(--space-8); padding-block: var(--space-6); }
+  .navbar__inner {
+    width: calc(100% - 2 * clamp(3.5rem, 5vw, 6rem));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: var(--space-6);
+    padding-block: var(--space-6);
+  }
+  .navbar__brand {
+    justify-self: start;
+    margin-inline-end: 0;
+    font-size: clamp(1.5rem, 1rem + 0.75vw, 2rem);
+    white-space: nowrap;
+  }
+  .navbar__desktop .navbar__links { flex-wrap: nowrap; }
+  .navbar__controls { justify-self: end; gap: var(--space-4); }
+  .navbar__logo,
+  .navbar__theme-icon { inline-size: 3.5rem; block-size: 3.5rem; }
+  .navbar__logo img { inline-size: 3.5rem; block-size: 3.5rem; }
+  .navbar__theme-icon img { inline-size: 3rem; block-size: 3rem; }
   .navbar__desktop { display: block; }
-  .navbar__theme--desktop { display: flex; flex-shrink: 0; margin-inline-end: calc(-1 * var(--space-4)); }
-  .navbar__theme--desktop select { padding-inline: var(--space-2); }
-  .navbar__social { margin-inline-start: var(--space-4); }
+  .navbar__theme-icon { display: grid; }
   .navbar__toggle,
   .navbar__dropdown { display: none; }
 }

@@ -3,6 +3,16 @@ import ProjectGallery from '../components/ProjectGallery'
 import type { Project, ProjectDetails } from '../types/project'
 import './ProjectDetail.css'
 
+const optionalSections: readonly { field: keyof Pick<ProjectDetails,
+  'architecture' | 'dataFlow' | 'aiDetails' | 'modelEvaluation' | 'qaValidation' | 'privacySecurity'>; title: string }[] = [
+  { field: 'architecture', title: 'Architecture' },
+  { field: 'dataFlow', title: 'Data / Realtime Flow' },
+  { field: 'aiDetails', title: 'AI / Model Details' },
+  { field: 'modelEvaluation', title: 'Model Evaluation' },
+  { field: 'qaValidation', title: 'QA & Validation' },
+  { field: 'privacySecurity', title: 'Privacy & Security' },
+]
+
 function ProjectDetail({ project, details }: { project: Project; details: ProjectDetails }) {
   return (
     <article className="project-detail">
@@ -17,14 +27,31 @@ function ProjectDetail({ project, details }: { project: Project; details: Projec
       </header>
       <ProjectGallery key={project.id} images={project.screenshots} title={project.title} />
       <div className="project-detail__sections">
-        <section aria-labelledby="overview-title"><h2 id="overview-title">Overview</h2><p>{project.shortDescription}</p></section>
+        <section aria-labelledby="overview-title"><h2 id="overview-title">Overview</h2><p>{details.overview || project.shortDescription}</p></section>
         <section aria-labelledby="description-title"><h2 id="description-title">Detailed Description</h2><p>{details.description}</p></section>
         <section aria-labelledby="features-title">
           <h2 id="features-title">Key Features</h2>
           <ul>{details.keyFeatures.map((feature) => <li key={feature}>{feature}</li>)}</ul>
         </section>
         <section aria-labelledby="development-title"><h2 id="development-title">Development Status</h2><p>{details.developmentStatus}</p></section>
-        <section aria-labelledby="technologies-title"><h2 id="technologies-title">Technologies</h2><p>{project.technologies.join(' · ') || 'To be confirmed'}</p></section>
+        <section aria-labelledby="technologies-title"><h2 id="technologies-title">Technologies</h2><p>{details.technologiesNote && <>{details.technologiesNote}<br /></>}{project.technologies.join(' · ') || 'To be confirmed'}</p></section>
+        {optionalSections.map(({ field, title }) => {
+          const paragraphs = details[field]?.filter((paragraph) => paragraph.trim())
+          if (!paragraphs?.length) return null
+          const headingId = `${field}-title`
+          return (
+            <section key={field} aria-labelledby={headingId}>
+              <h2 id={headingId}>{title}</h2>
+              <div className="stack">{paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+            </section>
+          )
+        })}
+        {!!details.gallery?.length && (
+          <section aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Gallery / Mockups</h2>
+            <ProjectGallery key={`${project.id}-gallery`} images={details.gallery} title={`${project.title} gallery / mockups`} />
+          </section>
+        )}
         <section aria-labelledby="resources-title">
           <h2 id="resources-title">Documents &amp; Resources</h2>
           <ul className="project-detail__resources">

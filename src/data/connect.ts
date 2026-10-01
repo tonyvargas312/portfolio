@@ -1,12 +1,11 @@
 type ConnectLink = {
   label: string
-  href: string | null
+  href: string
 }
 
-// Replace null placeholders with profile URLs or a mailto: URL when available.
 export const connectLinks: ConnectLink[] = [
-  { label: 'LinkedIn', href: null },
-  { label: 'Email', href: null },
-  { label: 'GitHub', href: null },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anthonyvargas312/' },
+  { label: 'Email', href: 'mailto:tonyvargas312@gmail.com' },
+  { label: 'GitHub', href: 'https://github.com/tonyvargas312' },
   { label: 'Resume', href: '/resume' },
 ]

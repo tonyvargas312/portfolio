@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import EducationCard from '../components/EducationCard'
+import ArrowIcon from '../components/ArrowIcon'
 import { credentialPreviews, featuredEducation } from '../data/education'
 import './EducationPreview.css'
 
@@ -45,7 +46,7 @@ function EducationPreview() {
                 : 'Show more education and certifications'}
               onClick={() => setExpanded((current) => !current)}
             >
-              <span aria-hidden="true">{expanded ? '↑' : '↓'}</span>
+              <ArrowIcon direction={expanded ? 'up' : 'down'} />
             </button>
           </div>
         </>

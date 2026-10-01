@@ -36,6 +36,8 @@
 }
 
 .featured-projects__controls button {
+  display: grid;
+  place-items: center;
   min-inline-size: 2.75rem;
   min-block-size: 2.75rem;
   padding: var(--space-2);

@@ -43,7 +43,7 @@ function ProjectPreview({ project, reversed = false, showLastUpdated = false, he
           {showLastUpdated && (
             <div>
               <dt>Last updated</dt>
-              <dd>{project.lastUpdated ? <time dateTime={project.lastUpdated}>{project.lastUpdated}</time> : 'To be confirmed'}</dd>
+              <dd>{project.lastUpdated && project.lastUpdated !== 'To be confirmed' ? <time dateTime={project.lastUpdated}>{project.lastUpdated}</time> : 'To be confirmed'}</dd>
             </div>
           )}
         </dl>
