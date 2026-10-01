@@ -1,67 +1,35 @@
-/* Shared perimeter treatment for established rounded UI surfaces. */
+/* Source recipes: header.scss, projects.scss and about.scss.
+   Existing radii, spacing, surfaces and motion remain component-owned. */
 .navbar.navbar,
-.projects-showcase__filters.projects-showcase__filters,
-.project-card.project-card,
-.education-card.education-card,
-.connect__link.connect__link,
-.resume-map.resume-map,
-.projects-showcase__coming-soon.projects-showcase__coming-soon,
-.project-detail__resources li {
-  box-shadow: 0 4px 16px rgb(0 0 0 / .05), var(--bubble-glow);
-  border-color: var(--bubble-edge);
-}
-.projects-showcase__pill.projects-showcase__pill,
-.navbar__theme-switch.navbar__theme-switch,
-.hero__primary.hero__primary,
+.projects-showcase__filters.projects-showcase__filters { border-color: var(--glow-edge); box-shadow: var(--glow-panel); }
+:is(.project-card, .education-card, .connect__link, .resume-map, .projects-showcase__coming-soon):is(.project-card, .education-card, .connect__link, .resume-map, .projects-showcase__coming-soon) { border-color: var(--glow-edge); box-shadow: var(--glow-card); }
+:is(.project-card, .education-card, .connect__link):is(.project-card, .education-card, .connect__link):hover { border-color: var(--glow-edge-active); box-shadow: var(--glow-card-hover); }
+:is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary, .education-preview__toggle, .resume-map__location, .about-toolbox__tile):is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary, .education-preview__toggle, .resume-map__location, .about-toolbox__tile),
 .project-detail__stack li,
 .project-card__badges li,
-.education-card__metadata span,
-.education-preview__toggle.education-preview__toggle,
-.resume-map__location.resume-map__location,
-.about-toolbox__tile.about-toolbox__tile { box-shadow: var(--bubble-pill-glow); }
-.navbar.navbar:hover,
-.projects-showcase__filters.projects-showcase__filters:hover,
-.project-card.project-card:hover,
-.education-card.education-card:hover,
-.connect__link.connect__link:hover,
-.resume-map.resume-map:hover,
-.projects-showcase__coming-soon.projects-showcase__coming-soon:hover,
-.project-detail__resources li:hover,
-.projects-showcase__pill.projects-showcase__pill:hover,
-.navbar__theme-switch.navbar__theme-switch:hover,
-.hero__primary.hero__primary:hover,
-.project-detail__stack li:hover,
-.project-card__badges li:hover,
-.education-card__metadata span:hover,
-.education-preview__toggle.education-preview__toggle:hover,
-.resume-map__location.resume-map__location:hover,
-.about-toolbox__tile.about-toolbox__tile:hover { box-shadow: var(--bubble-glow-hover); border-color: var(--color-accent); }
-.about-toolbox__item:hover .about-toolbox__tile { box-shadow: var(--bubble-glow-hover); }
+.education-card__metadata span { border-color: var(--glow-edge); box-shadow: var(--glow-pill); }
+:is(.projects-showcase__pill, .navbar__theme-switch, .education-preview__toggle, .resume-map__location):is(.projects-showcase__pill, .navbar__theme-switch, .education-preview__toggle, .resume-map__location):hover,
+.about-toolbox__item:hover .about-toolbox__tile { border-color: var(--color-accent); box-shadow: var(--glow-pill-hover); }
+.hero__primary.hero__primary:hover { box-shadow: var(--glow-button-hover); }
 .projects-showcase__pill.projects-showcase__pill[aria-pressed='true'],
 .resume-map__location.resume-map__location[data-selected='true'],
-.navbar__theme-switch.navbar__theme-switch:active,
-.hero__primary.hero__primary:active { box-shadow: var(--bubble-glow-selected); }
-:is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary, .connect__link, .education-preview__toggle, .resume-map__location):focus-visible {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 3px;
-  box-shadow: var(--bubble-glow-selected);
-}
+.hero__primary.hero__primary:active { border-color: var(--glow-edge-active); box-shadow: var(--glow-pill-selected); }
+:is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary, .connect__link, .education-preview__toggle, .resume-map__location):focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; box-shadow: var(--glow-pill-selected); }
+/* Glow belongs to the outer frame so internal overflow still clips the media. */
+.about-page__personal-photo .about-page__portrait.about-page__portrait,
+.about-preview__photo .about-page__portrait.about-page__portrait,
+.personal-photos__viewport.personal-photos__viewport,
+.about-page__video .introduction-video.introduction-video,
+.project-gallery__viewport.project-gallery__viewport,
+.project-detail__visual img,
+.project-detail__visual video,
+.project-detail__preview.project-detail__preview { border-color: var(--glow-edge); box-shadow: var(--glow-media); }
+.personal-photos__viewport.personal-photos__viewport { outline: 1px solid var(--glow-edge); outline-offset: -1px; }
+/* Transparent Hero artwork uses an alpha-edge shadow rather than a square frame. */
+.hero__artwork.hero__artwork { filter: drop-shadow(0 8px 24px rgb(var(--glow-primary) / calc(.2 * var(--glow-alpha)))); }
 @media (prefers-reduced-motion: no-preference) {
-.navbar.navbar,
-.projects-showcase__filters.projects-showcase__filters,
-.project-card.project-card,
-.education-card.education-card,
-.connect__link.connect__link,
-.resume-map.resume-map,
-.projects-showcase__coming-soon.projects-showcase__coming-soon,
-.project-detail__resources li,
-.projects-showcase__pill.projects-showcase__pill,
-.navbar__theme-switch.navbar__theme-switch,
-.hero__primary.hero__primary,
-.project-detail__stack li,
-.project-card__badges li,
-.education-card__metadata span,
-.education-preview__toggle.education-preview__toggle,
-.resume-map__location.resume-map__location,
-.about-toolbox__tile.about-toolbox__tile { transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
+  .projects-showcase__pill.projects-showcase__pill,
+  .navbar__theme-switch.navbar__theme-switch,
+  .hero__primary.hero__primary,
+  .resume-map__location.resume-map__location { transition: box-shadow .3s ease, border-color .3s ease, background-color .3s ease, color .3s ease; }
 }

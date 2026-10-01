@@ -18,18 +18,23 @@ function variation(index: number, salt: number) {
   return value - Math.floor(value)
 }
 // The majority remain neutral; brand accents are distributed across the viewport.
-const particleColors: Record<number, string> = {
-  1: '#0BE5C9', 3: '#01A0CE', 5: '#558BAA', 7: '#0BE5C9',
-  9: '#40718C', 11: '#01A0CE', 13: '#0BE5C9', 15: '#C0754E',
-  17: '#558BAA', 19: '#0BE5C9', 21: '#01A0CE', 23: '#40718C',
-  25: '#FDE6BA', 27: '#0BE5C9',
-  2: '#0BE5C9', 10: '#01A0CE', 18: '#558BAA',
-}
-const activeParticles = Array.from({ length: 29 }, (_, index) => ({
+// Interleave the palette so mobile subsets retain approximately 40% orange.
+const palette = [
+  '#C0754E', '#0BE5C9', '#C0754E', '#01A0CE', '#558BAA',
+  '#C0754E', '#40718C', '#C0754E', '#0BE5C9', '#FDE6BA',
+  '#C0754E', '#01A0CE', '#C0754E', '#558BAA', '#793639',
+  '#C0754E', '#0BE5C9', '#C0754E', '#40718C', null,
+  '#C0754E', '#01A0CE', '#C0754E', '#0BE5C9', '#558BAA',
+  '#C0754E', '#40718C', '#C0754E', '#01A0CE', '#FDE6BA',
+  '#C0754E', '#0BE5C9', '#C0754E', '#558BAA', '#793639',
+  '#C0754E', '#01A0CE', '#C0754E', '#0BE5C9',
+] as const
+const particleColors: Record<number, string | null> = Object.fromEntries(palette.map((color, index) => [index, color]))
+const activeParticles = Array.from({ length: 39 }, (_, index) => ({
   left: `${5 + variation(index, 1) * 90}%`,
   top: `${10 + variation(index, 2) * 85}%`,
   '--active-size': `${2 + variation(index, 3) * 4}px`,
-  '--active-duration': `${index >= 24 ? 5 + variation(index, 4) * 3 : 6 + variation(index, 4) * 6 + (index % 7 === 0 ? 3 : 0)}s`,
+  '--active-duration': `${index % 10 < 5 ? 10 + variation(index, 4) * 5 : index % 10 < 8 ? 7 + variation(index, 4) * 3 : 5 + variation(index, 4) * 2}s`,
   '--active-color': particleColors[index] ?? 'var(--color-particle)',
   '--active-delay': `${-variation(index, 5) * 15}s`,
   '--active-opacity': `${particleColors[index] ? 0.85 + variation(index, 6) * 0.15 : 0.65 + variation(index, 6) * 0.35}`,
@@ -46,7 +51,7 @@ function BackgroundParticles() {
         <span className="background-particles__particle" key={index} style={style} />
       ))}
       <div className="background-particles__active-layer">
-        {activeParticles.map((style, index) => <span key={index} className="background-particles__active" data-colored={Boolean(particleColors[index])} data-pale={index === 25 || particleColors[index] === '#0BE5C9'} data-type={index % 8 === 6 ? 'vertical' : index % 2 ? 'square' : 'circle'} style={style} />)}
+        {activeParticles.map((style, index) => <span key={index} className="background-particles__active" data-colored={Boolean(particleColors[index])} data-pale={particleColors[index] === '#FDE6BA' || particleColors[index] === '#0BE5C9'} data-type={index % 8 === 6 ? 'vertical' : index % 2 ? 'square' : 'circle'} style={style} />)}
       </div>
     </div>
   )

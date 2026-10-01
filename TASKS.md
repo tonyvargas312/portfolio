@@ -126,6 +126,8 @@
 
 - [x] Global bubble and particle intensity polish (brighter minority brand particles, shared card/pill perimeter states across routes, theme-aware edges and intact reduced-motion behavior)
 
+- [x] Source-based glow and orange particle pass (TJ SASS shadow recipes recolored across UI/media, theme alpha adaptation, 39 active particles with 16 orange, and preserved Hero/reduced-motion behavior)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

@@ -120,10 +120,23 @@
   }
 }
 
+/* Shadow geometry from TJ Klint's header/projects/about SASS; brand colors only.
+   The reference uses no inset shadow or spread on these recipes. */
 :root {
-  --bubble-edge: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
-  --bubble-glow: 0 0 8px 1px color-mix(in srgb, var(--color-accent) var(--bubble-glow-strength), transparent), 0 0 14px rgba(1, 160, 206, .08);
-  --bubble-glow-hover: 0 0 10px 1px color-mix(in srgb, var(--color-accent) var(--bubble-glow-hover-strength), transparent), 0 0 16px rgba(1, 160, 206, .12);
-  --bubble-glow-selected: 0 0 0 1px color-mix(in srgb, var(--color-accent) 35%, transparent), var(--bubble-glow-hover);
-  --bubble-pill-glow: 0 0 7px color-mix(in srgb, var(--color-accent) var(--bubble-glow-strength), transparent);
+  --glow-primary: 11 229 201;
+  --glow-secondary: 1 160 206;
+  --glow-support: 64 113 140;
+  --glow-alpha: .6;
+  --glow-edge: rgb(var(--glow-primary) / calc(.3 * var(--glow-alpha)));
+  --glow-edge-active: rgb(var(--glow-secondary) / calc(.4 * var(--glow-alpha)));
+  --glow-panel: 0 12px 48px rgb(var(--glow-primary) / calc(.3 * var(--glow-alpha))), 0 4px 16px rgb(var(--glow-support) / calc(.4 * var(--glow-alpha)));
+  --glow-card: 0 8px 24px rgb(var(--glow-primary) / calc(.25 * var(--glow-alpha)));
+  --glow-card-hover: 0 16px 40px rgb(var(--glow-primary) / calc(.4 * var(--glow-alpha)));
+  --glow-pill: 0 4px 12px rgb(var(--glow-primary) / calc(.2 * var(--glow-alpha)));
+  --glow-pill-hover: 0 4px 12px rgb(var(--glow-primary) / calc(.3 * var(--glow-alpha)));
+  --glow-pill-selected: 0 4px 12px rgb(var(--glow-primary) / calc(.4 * var(--glow-alpha)));
+  --glow-button-hover: 0 6px 20px rgb(var(--glow-primary) / calc(.4 * var(--glow-alpha)));
+  --glow-media: 0 8px 24px rgb(var(--glow-primary) / calc(.2 * var(--glow-alpha)));
 }
+:root[data-theme='dark'] { --glow-alpha: 1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) { --glow-alpha: 1; } }
