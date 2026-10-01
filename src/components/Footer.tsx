@@ -13,9 +13,9 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer__content">
-      <p>© 2026 Anthony Vargas</p>
-      <nav aria-label="Footer social profiles">
+      <p className="footer__copyright">© 2026 Anthony Vargas</p>
+      <button className="footer__back-to-top" type="button" onClick={backToTop}>Back to top</button>
+      <nav className="footer__navigation" aria-label="Footer social profiles">
         <ul className="footer__links">
           {socialLinks.map(({ label, href }) => (
             <li key={label}>
@@ -24,8 +24,6 @@ function Footer() {
           ))}
         </ul>
       </nav>
-      </div>
-      <button className="footer__back-to-top" type="button" onClick={backToTop}>Back to top</button>
     </footer>
   )
 }
