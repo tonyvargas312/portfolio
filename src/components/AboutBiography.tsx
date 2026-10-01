@@ -24,7 +24,7 @@ function AboutBiography() {
       </div>
       <div className="about-biography__row">
         <div className="about-page__personal-photo">
-          <PortfolioPhoto filename="profile.jpeg" alt="Anthony standing outdoors" />
+          <PortfolioPhoto filename="beach.jpeg" alt="Anthony in the water at the beach" />
         </div>
         <BiographyParagraphs paragraphs={biography.slice(5)} />
       </div>

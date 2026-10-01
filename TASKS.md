@@ -140,6 +140,8 @@
 
 - [x] About structure and media remap (removed Background/data/unused stack, childhood and renamed profile biography photos, refreshed Home profile URL, and cone added to three-photo 3D carousel)
 
+- [x] Final portrait mapping correction (Home-only current profile; childhood upper/right and beach lower/left in dedicated About biography)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)
