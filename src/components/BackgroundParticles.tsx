@@ -17,11 +17,19 @@ function variation(index: number, salt: number) {
   const value = Math.sin((index + 1) * 127.1 + salt * 311.7) * 43758.5453
   return value - Math.floor(value)
 }
-const activeParticles = Array.from({ length: 24 }, (_, index) => ({
+// The majority remain neutral; brand accents are distributed across the viewport.
+const particleColors: Record<number, string> = {
+  1: '#0BE5C9', 3: '#01A0CE', 5: '#558BAA', 7: '#0BE5C9',
+  9: '#40718C', 11: '#01A0CE', 13: '#0BE5C9', 15: '#C0754E',
+  17: '#558BAA', 19: '#0BE5C9', 21: '#01A0CE', 23: '#40718C',
+  25: '#FDE6BA', 27: '#0BE5C9',
+}
+const activeParticles = Array.from({ length: 29 }, (_, index) => ({
   left: `${5 + variation(index, 1) * 90}%`,
   top: `${10 + variation(index, 2) * 85}%`,
   '--active-size': `${2 + variation(index, 3) * 4}px`,
-  '--active-duration': `${6 + variation(index, 4) * 6 + (index % 7 === 0 ? 3 : 0)}s`,
+  '--active-duration': `${index >= 24 ? 5 + variation(index, 4) * 3 : 6 + variation(index, 4) * 6 + (index % 7 === 0 ? 3 : 0)}s`,
+  '--active-color': particleColors[index] ?? 'var(--color-particle)',
   '--active-delay': `${-variation(index, 5) * 15}s`,
   '--active-opacity': `${0.65 + variation(index, 6) * 0.35}`,
   '--float-x': `${20 + variation(index, 7) * 15}px`,
@@ -37,7 +45,7 @@ function BackgroundParticles() {
         <span className="background-particles__particle" key={index} style={style} />
       ))}
       <div className="background-particles__active-layer">
-        {activeParticles.map((style, index) => <span key={index} className="background-particles__active" data-accent={index % 5 === 0} data-type={index % 8 === 6 ? 'vertical' : index % 2 ? 'square' : 'circle'} style={style} />)}
+        {activeParticles.map((style, index) => <span key={index} className="background-particles__active" data-colored={Boolean(particleColors[index])} data-pale={index === 25 || particleColors[index] === '#0BE5C9'} data-type={index % 8 === 6 ? 'vertical' : index % 2 ? 'square' : 'circle'} style={style} />)}
       </div>
     </div>
   )

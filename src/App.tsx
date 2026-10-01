@@ -7,6 +7,7 @@ import About from './pages/About'
 import Resume from './pages/Resume'
 import NotFound from './pages/NotFound'
 import { projects } from './data/projects'
+import './styles/bubbles.css'
 
 function App() {
   return (

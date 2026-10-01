@@ -120,6 +120,10 @@
 
 - [x] Source-referenced particle motion refinement (stable varied viewport floats, squares and sparse rotating slivers, static visible reduced-motion stars/particles, and Hero rotation settling to center)
 
+- [x] Bubble perimeter polish (shared theme-aware teal glow tokens, restrained panel/pill states, and retained visible keyboard outlines without layout changes)
+
+- [x] Sloth palette particle refinement (29 active particles, modest faster additions, majority neutral with exact brand accent sources, responsive density and light-mode pale-color contrast; stars and Hero unchanged)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

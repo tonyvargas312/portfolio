@@ -1,0 +1,37 @@
+/* Opt-in perimeter polish for established bubbles, not all rounded surfaces. */
+.navbar.navbar,
+.projects-showcase__filters.projects-showcase__filters {
+  box-shadow: 0 4px 16px rgb(0 0 0 / .06), var(--bubble-glow);
+  border-color: color-mix(in srgb, var(--color-accent) 18%, var(--color-border));
+}
+.navbar.navbar:hover,
+.projects-showcase__filters.projects-showcase__filters:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / .06), var(--bubble-glow-hover);
+}
+.projects-showcase__pill.projects-showcase__pill,
+.navbar__theme-switch.navbar__theme-switch,
+.hero__primary.hero__primary,
+.project-detail__stack li,
+.project-card__categories li {
+  box-shadow: var(--bubble-pill-glow);
+}
+.projects-showcase__pill.projects-showcase__pill:hover,
+.projects-showcase__pill.projects-showcase__pill[aria-pressed='true'],
+.navbar__theme-switch.navbar__theme-switch:hover,
+.hero__primary.hero__primary:hover {
+  box-shadow: var(--bubble-glow-hover);
+}
+:is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary):focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  box-shadow: var(--bubble-glow-hover);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .navbar.navbar,
+  .projects-showcase__filters.projects-showcase__filters,
+  .projects-showcase__pill.projects-showcase__pill,
+  .navbar__theme-switch.navbar__theme-switch,
+  .hero__primary.hero__primary {
+    transition: box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+  }
+}
