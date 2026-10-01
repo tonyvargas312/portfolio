@@ -80,7 +80,10 @@ filename `Anthony_Vargas_Arguedas_CV.pdf`.
 The shared client is exported as `supabase` from `src/lib/supabase.ts`.
 The About portrait queries the first published `about` record in
 `public.portfolio_photos`, ordered by `sort_order`, and generates its public URL
-from `storage_path` in the `portfolio-photos` bucket. Other UI remains local.
+from `storage_path` in the `portfolio-photos` bucket. The Home About video queries
+the first published `about` record in `public.portfolio_videos`, ordered by
+`sort_order`. It uses the video ID (or a supported YouTube URL), preserves valid
+start times, and keeps the existing placeholder on missing or invalid metadata.
 
 For local development, fill in the blank entries in the Git-ignored `.env.local`:
 

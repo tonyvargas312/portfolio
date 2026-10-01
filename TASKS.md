@@ -48,6 +48,7 @@
 - [x] Home About composition symmetry (centered capped desktop grid, equal columns, and aligned column tops)
 - [x] Home About vertical placement (subtle desktop top-padding increase with existing column balance and mobile rhythm preserved)
 - [x] Home About video alignment (desktop video vertically centered against the complete About text and CTA block)
+- [x] Supabase Home About video (published metadata query, validated YouTube embed and start time, stable loading placeholder, and graceful fallback)
 - [x] Education and certifications preview (featured study card, responsive credential placeholders, optional metadata and detail links)
 - [x] Contact / social links (responsive Connect section; live profile and email links)
 - [x] Hero primary Connect CTA targeting the homepage Connect anchor

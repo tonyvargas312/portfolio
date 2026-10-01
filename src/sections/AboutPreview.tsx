@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import IntroductionVideo from '../components/IntroductionVideo'
+import AboutVideo from '../components/AboutVideo'
 import './AboutPreview.css'
 
 function AboutPreview() {
@@ -7,7 +7,7 @@ function AboutPreview() {
     <section className="about-preview" aria-labelledby="about-preview-title">
       <div className="about-preview__layout">
         <div className="about-preview__video">
-          <IntroductionVideo />
+          <AboutVideo />
         </div>
         <div className="about-preview__content reading-width stack">
           <div className="about-preview__heading">
