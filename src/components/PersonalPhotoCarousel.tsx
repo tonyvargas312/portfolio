@@ -75,7 +75,7 @@ function PersonalPhotoCarousel() {
         )}
       </div>
       {count > 1 && (
-        <div className="project-gallery__controls">
+        <div className="project-gallery__controls personal-photos__controls">
           <button type="button" aria-label="Previous personal photo" aria-controls={viewportId} onClick={() => move(-1)}><ArrowIcon direction="left" /></button>
           <div className="project-gallery__dots" role="group" aria-label="Choose a personal photo">
             {photos.map((item, dot) => (
