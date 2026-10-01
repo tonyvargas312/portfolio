@@ -14,6 +14,7 @@
 }
 
 .about-page__portrait {
+  position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--space-2);
@@ -21,6 +22,8 @@
 }
 
 .about-page__portrait img {
+  position: absolute;
+  inset: 0;
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;

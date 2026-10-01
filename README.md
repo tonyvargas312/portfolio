@@ -78,7 +78,9 @@ filename `Anthony_Vargas_Arguedas_CV.pdf`.
 ## Supabase foundation
 
 The shared client is exported as `supabase` from `src/lib/supabase.ts`.
-No UI component imports it or queries Supabase yet.
+The About portrait queries the first published `about` record in
+`public.portfolio_photos`, ordered by `sort_order`, and generates its public URL
+from `storage_path` in the `portfolio-photos` bucket. Other UI remains local.
 
 For local development, fill in the blank entries in the Git-ignored `.env.local`:
 
@@ -89,8 +91,8 @@ Use your Supabase project URL and **publishable** key, then restart Vite.
 Vite exposes `VITE_` variables in frontend bundles: never use secret keys,
 service-role keys, or database passwords here. The client reports missing
 configuration when imported without these variables and never logs their values.
-The current UI continues to run without local Supabase values because it does
-not import the client yet. Environment changes in Vercel require a new build.
+The About portrait falls back to its existing placeholder when configuration,
+the query, or the image fails. Environment changes in Vercel require a new build.
 
 ## Project status
 

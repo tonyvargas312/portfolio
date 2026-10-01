@@ -51,6 +51,3 @@ export const currentFocus = [
 ]
 
 export const aboutConnectDescription = 'If you’d like to discuss a project, technology, or professional opportunity, feel free to reach out.'
-
-// Import a personal photo from src/assets and use its URL here when available.
-export const personalPhoto: { src: string; alt: string } | null = null

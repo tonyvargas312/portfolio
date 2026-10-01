@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react'
 import IntroductionVideo from '../components/IntroductionVideo'
+import AboutPortrait from '../components/AboutPortrait'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
 import {
   introduction, background, workingApproach, interests, educationDescription,
-  technologyGroups, beyondSoftware, currentFocus, aboutConnectDescription, personalPhoto,
+  technologyGroups, beyondSoftware, currentFocus, aboutConnectDescription,
 } from '../data/about'
 import './About.css'
 
@@ -32,15 +33,7 @@ function About() {
           <p className="about-page__role">Computer Engineering Student</p>
           <Paragraphs paragraphs={introduction} />
         </div>
-        <div className="about-page__portrait">
-          {personalPhoto ? (
-            <img src={personalPhoto.src} alt={personalPhoto.alt} loading="lazy" decoding="async" />
-          ) : (
-            <div className="about-page__portrait-placeholder">
-              <p>Personal photo coming soon.</p>
-            </div>
-          )}
-        </div>
+        <AboutPortrait />
       </header>
       <AboutSection id="about-background" title="Background"><Paragraphs paragraphs={background} /></AboutSection>
       <AboutSection id="about-process" title="How I work"><Paragraphs paragraphs={workingApproach} /></AboutSection>
