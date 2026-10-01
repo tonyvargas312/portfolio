@@ -22,6 +22,12 @@
   min-inline-size: 0;
 }
 
+.project-preview__content > h2,
+.project-preview__content > h3 {
+  font-size: var(--text-xl);
+  letter-spacing: normal;
+}
+
 .project-preview__media {
   min-inline-size: 0;
   margin: 0;
@@ -58,6 +64,8 @@ a.project-preview__link:hover {
 .project-preview__description {
   max-inline-size: 45ch;
   margin-block-start: var(--space-6);
+  font-size: var(--text-project-description);
+  line-height: var(--leading-project);
 }
 
 .project-preview__details {
@@ -70,6 +78,7 @@ a.project-preview__link:hover {
 
 .project-preview__details dt {
   color: var(--color-text-muted);
+  font-weight: var(--weight-heading);
 }
 
 .project-preview__details dd {
@@ -82,12 +91,16 @@ a.project-preview__link:hover {
   align-items: baseline;
   gap: var(--space-2) var(--space-3);
   color: var(--color-text-muted);
-  font-weight: var(--weight-heading);
+  font-weight: var(--weight-emphasis);
 }
 
 .project-preview__soon {
   font-size: var(--text-small);
   font-weight: var(--weight-normal);
+}
+
+@media (max-width: 39.999rem) {
+  .project-preview__description { font-size: var(--text-body); }
 }
 
 @media (min-width: 64rem) {

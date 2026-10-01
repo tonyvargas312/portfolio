@@ -27,6 +27,7 @@
 - [x] Desktop Navbar (wide, centered primary navigation, prominent branding, theme control, and pixel-art home logo)
 - [x] Accessible mobile navigation menu (dropdown, Escape handling, link dismissal)
 - [x] Navbar spacing polish (responsive desktop outer gutters, larger mobile branding and navigation controls)
+- [x] Floating navbar (sticky enclosed translucent panel, right-aligned desktop navigation, theme-aware blur/border/shadow, and preserved responsive menu)
 - [x] Theme controls (desktop sun/moon toggle and mobile System / Light / Dark selector sharing state)
 - [x] Footer (responsive layout, copyright, and social profile links)
 - [ ] Home page
@@ -41,6 +42,11 @@
 - [x] Resume page (accessible map search, reduced-motion support, direct access, and shared PDF view / download links)
 
 ## Phase 3 — Home
+
+- [x] Home About portrait redesign (shared Supabase About photo, left-photo/right-text layout, stronger heading, and preserved concise copy/CTA)
+- [x] Hero fixed two-line roles (Computer Engineer, Software Developer, Data Engineer; stable responsive box and preserved motion accessibility)
+
+- [x] Hero visual polish and accessible profession typewriter (stable word wrapping, widened composition, original illustration/copy/links, and static reduced-motion fallback)
 
 - [x] Hero (role-led introduction, desktop text/visual columns, responsive transparent pixel-art illustration)
 - [x] Featured projects (editorial previews with image and link placeholders)
@@ -57,6 +63,10 @@
 - [x] Hero primary Connect CTA targeting the homepage Connect anchor
 
 ## Phase 4 — Projects
+
+- [x] Clean collapsed project tags (only active filter and +; all data-derived tags available when expanded)
+
+- [x] Reference-inspired Projects showcase (shared Home/page 2-column cards, data-derived tag filters and expansion, reused education arrow styles, and one upcoming-project placeholder)
 
 - [x] Create typed project preview data model
 - [x] Shared serializable project model with URL-based media and future development updates
@@ -77,6 +87,8 @@
 - [x] Contact information
 
 ## Phase 6 — Polish
+
+- [x] Reference typography (verified Roboto Mono/Inter, licensed self-hosted fonts, reusable responsive typography tokens)
 
 - [x] Arrow controls polish (shared directional SVGs, triangle carousel arrows, and circular education toggle with theme-aware hover highlight)
 - [x] Circular education arrow spacing (moderate separation below cards, with a smaller mobile gap)

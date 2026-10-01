@@ -81,6 +81,7 @@ The shared client is exported as `supabase` from `src/lib/supabase.ts`.
 The About portrait queries the first published `about` record in
 `public.portfolio_photos`, ordered by `sort_order`, and generates its public URL
 from `storage_path` in the `portfolio-photos` bucket. Home and About both reuse
+`src/components/AboutPortrait.tsx` for that photo. The About page retains
 `src/components/AboutVideo.tsx`, which queries
 the first published `about` record in `public.portfolio_videos`, ordered by
 `sort_order`. It uses the video ID (or a supported YouTube URL), preserves valid
@@ -115,6 +116,12 @@ The initial focus is on:
 - documenting active projects
 - adding education and certifications
 - connecting GitHub, LinkedIn and resume information
+
+## Typography sources
+
+Typography follows the deployed CSS at https://tjklint.github.io/static/css/main.343ddaec.css: Roboto Mono for display, body and navigation, and Inter for technology names. Shared sizes, weights, tracking and line heights live in `src/styles/tokens.css`; the existing hero uses the reference's largest section-heading scale because the reference has no separate hero rule.
+
+The normal-style variable fonts are self-hosted from the official Google Fonts repository (`ofl/robotomono/RobotoMono[wght].ttf` and `ofl/inter/Inter[opsz,wght].ttf`). Their SIL Open Font License files are included in `src/assets/fonts/`. Actual weight 700 is supplied rather than relying on synthetic bold from the reference's 400/500-only Roboto Mono faces.
 
 ## Planned sections
 

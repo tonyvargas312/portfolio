@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import heroTechOrbit from '../assets/hero-tech-orbit.png'
+import TypewriterTitle from '../components/TypewriterTitle'
 import './Hero.css'
 
 function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__introduction">
-        <h1 id="hero-title">Computer Engineering Student</h1>
+        <TypewriterTitle />
         <p className="hero__statement">
           I build software, explore data-driven systems, and develop technical
           projects that turn ideas into practical solutions.

@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom'
-import AboutVideo from '../components/AboutVideo'
+import AboutPortrait from '../components/AboutPortrait'
 import './AboutPreview.css'
 
 function AboutPreview() {
   return (
     <section className="about-preview" aria-labelledby="about-preview-title">
+      <h2 id="about-preview-title">About Me</h2>
       <div className="about-preview__layout">
-        <div className="about-preview__video">
-          <AboutVideo />
+        <div className="about-preview__photo">
+          <AboutPortrait />
         </div>
         <div className="about-preview__content reading-width stack">
           <div className="about-preview__heading">
-            <p className="about-preview__label">About me</p>
-            <h2 id="about-preview-title">Learning by building.</h2>
+            <h3>Learning by building.</h3>
           </div>
           <p className="about-preview__introduction">
             I’m Anthony Vargas, a Computer Engineering student interested in Data
