@@ -116,6 +116,8 @@
 
 - [x] Project top ordering and global sloth favicon (back link/title/media before metadata; compact favicon from unchanged navbar artwork)
 
+- [x] Ambient background and Hero motion polish (higher-contrast themed stars, sparse independent CSS drifting layer, and reduced-motion-aware scroll rotation)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

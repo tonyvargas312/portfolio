@@ -94,3 +94,7 @@
 @media (prefers-reduced-motion: reduce) {
   .hero__cursor { display: none; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__artwork { transform: rotate(var(--orbit-rotation, 0deg)); transform-origin: center; }
+}
