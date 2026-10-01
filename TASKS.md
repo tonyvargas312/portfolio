@@ -81,5 +81,7 @@
 - [ ] Animations and transitions
 - [x] Subtle global background particles (CSS motion, reduced-motion support, lower mobile density)
 - [ ] Performance review
-- [ ] Production build
+- [x] Production build
+- [x] Vercel preparation (minimal SPA rewrite, dashboard setup documentation, production route HTTP checks, asset responses, and resume PDF integrity)
+- [ ] Browser production smoke check (route refreshes, resume game/view/download, themes, desktop/tablet/mobile layouts; no browser surface available during preparation)
 - [ ] Deployment
