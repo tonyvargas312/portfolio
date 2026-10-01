@@ -35,6 +35,7 @@
 - [x] About page (complete editorial profile, interests, education, grouped technologies, current focus, and shared contact links; YouTube-ready video placeholder)
 - [x] About introduction portrait (existing Anthony Vargas text beside a responsive portrait placeholder with configurable photo source; mobile text-first stacking)
 - [x] Supabase About portrait (first published About record, public Storage URL, stable loading area, alt text, and failure placeholder)
+- [x] Shared dynamic About video (Home preview and About page reuse AboutVideo and the same published Supabase record)
 - [x] Resume page (accessible map search, reduced-motion support, direct access, and shared PDF view / download links)
 
 ## Phase 3 — Home

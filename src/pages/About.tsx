@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import IntroductionVideo from '../components/IntroductionVideo'
+import AboutVideo from '../components/AboutVideo'
 import AboutPortrait from '../components/AboutPortrait'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
@@ -25,7 +25,7 @@ function AboutSection({ id, title, children }: { id: string; title: string; chil
 function About() {
   return (
     <div className="about-page">
-      <IntroductionVideo />
+      <AboutVideo />
       <header className="about-page__introduction">
         <div className="about-page__introduction-text">
           <p className="about-page__eyebrow">About me</p>
