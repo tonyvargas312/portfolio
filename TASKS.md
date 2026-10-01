@@ -136,6 +136,8 @@
 
 - [x] Beyond Software 3D stack correction (six circular card states, presentation-only two-photo clones, image/keyboard/vertical-swipe navigation; restored Background static portrait on right)
 
+- [x] Beyond Software landscape correction (scoped 3:2 cards, 460px maximum width and 120/240px desktop offsets; unchanged carousel behavior and other photo ratios)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)
