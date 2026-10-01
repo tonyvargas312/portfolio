@@ -1,5 +1,24 @@
-.about-page > * + * {
+﻿.about-page > * + * {
   margin-block-start: var(--section-gap);
+}
+
+.about-page__video {
+  inline-size: min(92rem, calc(100vw - 2 * var(--space-4)));
+  margin-inline: calc((100% - min(92rem, 100vw - 2 * var(--space-4))) / 2);
+}
+
+.about-page__video .introduction-video {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--space-4);
+  box-shadow: 0 var(--space-2) var(--space-6) rgb(0 0 0 / 0.06);
+}
+
+.about-page__introduction,
+.about-page__section,
+.about-page__beyond {
+  --about-page-gutter: var(--page-gutter);
+  inline-size: min(92rem, calc(100vw - 2 * var(--about-page-gutter)));
+  margin-inline: calc((100% - min(92rem, 100vw - 2 * var(--about-page-gutter))) / 2);
 }
 
 .about-page__introduction {
@@ -9,9 +28,12 @@
 
 .about-page__introduction > * { min-inline-size: 0; }
 
-.about-page__introduction-text > * + * {
-  margin-block-start: var(--space-6);
-}
+.about-page__title { font-size: var(--text-3xl); }
+.about-page__personal-photo { inline-size: 100%; min-inline-size: 0; }
+.about-page__personal-photo .about-page__portrait { border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border)); }
+.about-page__introduction-text { --stack-gap: var(--space-6); max-inline-size: 90ch; font-size: clamp(1.125rem, 2vw, 1.25rem); }
+.about-page__introduction-text p { text-align: left; line-height: var(--leading-body); }
+.about-page__introduction-text strong { color: var(--color-accent); font-weight: var(--weight-emphasis); }
 
 .about-page__portrait {
   position: relative;
@@ -39,25 +61,23 @@
 }
 
 @media (min-width: 40rem) {
-  .about-page__introduction {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-  }
+  .about-page__introduction,
+  .about-page__section,
+  .about-page__beyond { --about-page-gutter: var(--space-8); }
+  .about-page__personal-photo { max-inline-size: 28rem; }
+  .about-page__introduction-text p { text-align: justify; text-align-last: left; hyphens: auto; }
 }
 
-.about-page__role {
-  font-size: var(--text-lg);
-}
+.about-biography { gap: var(--space-12); }
+.about-biography__intro { --stack-gap: var(--space-6); }
+.about-biography__row { display: grid; gap: var(--space-8); }
+.about-biography__row > * { min-inline-size: 0; }
 
-.about-page__introduction-text > p:not(.about-page__eyebrow),
-.about-page__introduction-text .reading-width > p {
-  font-size: var(--text-lg);
-  line-height: var(--leading-body);
-}
-
-.about-page__eyebrow {
-  color: var(--color-accent);
-  font-size: var(--text-small);
+@media (min-width: 56rem) {
+  .about-biography__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); align-items: center; }
+  .about-biography__row--text-first { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+  .about-biography__row--text-first .about-page__personal-photo { grid-column: 2; grid-row: 1; }
+  .about-biography__row--text-first .about-page__introduction-text { grid-column: 1; grid-row: 1; }
 }
 
 .about-page__muted {
@@ -77,22 +97,11 @@
 
 .about-page__areas {
   display: grid;
-  gap: var(--space-12);
+  gap: var(--space-8);
 }
 
 .about-page__areas > * { min-inline-size: 0; }
-.about-page__areas h3 { font-size: var(--text-lg); }
-.about-page__tools li { overflow-wrap: anywhere; }
-
-.about-page__tools {
-  font-family: var(--font-secondary);
-  font-size: var(--text-project-description);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-8);
-  margin-block: var(--space-4) 0;
-  padding-inline-start: var(--space-6);
-}
+.about-page__areas h3 { font-size: var(--text-xl); }
 
 .about-page__beyond {
   display: grid;
@@ -117,10 +126,43 @@
 }
 
 @media (min-width: 64rem) {
-  .about-page__introduction { column-gap: var(--space-12); }
+  .about-biography__row { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); }
+  .about-biography__row--text-first { grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); }
 
   .about-page__section {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: var(--space-12);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr);
+    gap: var(--space-8);
   }
 }
+
+/* The lower article continues the biography's typography and paragraph rhythm. */
+.about-page__article {
+  --stack-gap: var(--space-6);
+  min-inline-size: 0;
+  max-inline-size: 90ch;
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-body);
+  letter-spacing: normal;
+  color: var(--color-text);
+}
+.about-page__article p { text-align: left; }
+.about-page__article strong { color: var(--color-accent); font-weight: var(--weight-emphasis); }
+.about-page__section > h2,
+.about-page__article > h2 { font-size: var(--text-2xl); }
+.about-page__article a { font-family: inherit; font-weight: var(--weight-emphasis); color: var(--color-accent); text-decoration: none; }
+.about-page__article a:hover { color: var(--color-accent-hover); text-decoration: underline; }
+@media (min-width: 40rem) {
+  .about-page__article p { text-align: justify; text-align-last: left; hyphens: auto; }
+}
+@media (min-width: 56rem) {
+  .about-page__section { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); align-items: start; }
+}
+@media (min-width: 64rem) {
+  .about-page__section { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); }
+}
+
+
+/* Background reuses the biography row and portrait dimensions. */
+.about-page__background { grid-template-columns: minmax(0, 1fr); }

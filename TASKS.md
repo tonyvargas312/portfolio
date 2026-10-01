@@ -19,7 +19,17 @@
 - [x] Add page container and reading width utilities
 - [x] Add responsive foundation breakpoints (40rem and 64rem)
 
+- [x] About content refresh (supplied lower-section copy, selective highlights, toolbox subtitle, and matching childhood portrait slot in Background)
+
 ## Phase 2 — Site Structure
+
+- [x] About toolbox refinement (existing six technology categories in a responsive local SVG icon grid; removed standalone photo below How I work while retaining both biography portraits)
+
+- [x] Main About biography alternating composition (unchanged intro/content/highlights, four-paragraph text-left row, portrait-right; remaining text-right row with identical portrait placeholder; vertically centered photos and photo-first mobile rows)
+
+- [x] About article consistency and second photo break (biography-sized lower paragraphs, responsive justification and highlights, aligned editorial columns, centered landscape placeholder after How I work)
+
+- [x] Dedicated About redesign (navbar-width cinematic video, supplied long-form biography with eight highlights, shared left portrait, responsive editorial grid, and retained supporting sections)
 
 - [x] React Router routes with shared shell, internal navigation, and Not Found page
 - [x] About and Resume routes
@@ -97,6 +107,8 @@
 - [x] Contact information
 
 ## Phase 6 — Polish
+
+- [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)
 
 - [x] UI consistency pass (removed decorative arrows, unified Hero control typography, centered SVG menu icons, and mobile icon-only theme switch with system resolution and saved manual preference)
 

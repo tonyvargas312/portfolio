@@ -1,24 +1,25 @@
 import type { ReactNode } from 'react'
 import AboutVideo from '../components/AboutVideo'
-import AboutPortrait from '../components/AboutPortrait'
+import AboutBiography from '../components/AboutBiography'
+import AboutToolbox from '../components/AboutToolbox'
 import PersonalPhotoCarousel from '../components/PersonalPhotoCarousel'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
 import {
-  introduction, background, workingApproach, interests, educationDescription,
-  technologyGroups, beyondSoftware, currentFocus, aboutConnectDescription,
+  background, workingApproach, interests, educationDescription,
+  beyondSoftware, currentFocus, aboutConnectDescription,
 } from '../data/about'
 import './About.css'
 
-function Paragraphs({ paragraphs }: { paragraphs: readonly string[] }) {
-  return <div className="reading-width stack">{paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+function Paragraphs({ paragraphs, highlights = [] }: { paragraphs: readonly string[]; highlights?: readonly string[] }) {
+  return <div className="stack">{paragraphs.map((paragraph) => <p key={paragraph}>{highlights.length === 0 ? paragraph : paragraph.split(new RegExp(`(${highlights.join('|')})`, 'gi')).map((part, index) => highlights.some((highlight) => highlight.toLowerCase() === part.toLowerCase()) ? <strong key={index}>{part}</strong> : part)}</p>)}</div>
 }
 
 function AboutSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
     <section className="about-page__section" aria-labelledby={id}>
       <h2 id={id}>{title}</h2>
-      {children}
+      <div className="about-page__article">{children}</div>
     </section>
   )
 }
@@ -26,22 +27,28 @@ function AboutSection({ id, title, children }: { id: string; title: string; chil
 function About() {
   return (
     <div className="about-page">
-      <AboutVideo />
-      <header className="about-page__introduction">
-        <div className="about-page__introduction-text">
-          <p className="about-page__eyebrow">About me</p>
-          <h1>Anthony Vargas</h1>
-          <p className="about-page__role">Computer Engineering Student</p>
-          <Paragraphs paragraphs={introduction} />
+      <section className="about-page__video" aria-label="Video introduction">
+        <AboutVideo />
+      </section>
+      <AboutBiography />
+      <section className="about-page__section about-page__background" aria-labelledby="about-background">
+        <h2 id="about-background">Background</h2>
+        <div className="about-biography__row about-biography__row--text-first">
+          <div className="about-page__personal-photo">
+            <div className="about-page__portrait">
+              <div className="about-page__portrait-placeholder"><p>Childhood photo</p></div>
+            </div>
+          </div>
+          <div className="about-page__introduction-text">
+            <Paragraphs paragraphs={background} highlights={['Computer Engineering', 'Data Engineering', 'systems integration']} />
+          </div>
         </div>
-        <AboutPortrait />
-      </header>
-      <AboutSection id="about-background" title="Background"><Paragraphs paragraphs={background} /></AboutSection>
-      <AboutSection id="about-process" title="How I work"><Paragraphs paragraphs={workingApproach} /></AboutSection>
+      </section>
+      <AboutSection id="about-process" title="How I work"><Paragraphs paragraphs={workingApproach} highlights={['problem itself', 'AI-assisted development tools']} /></AboutSection>
       <AboutSection id="about-interests" title="What I’m interested in">
-        <div className="about-page__areas reading-width">
-          {interests.map(({ title, description }) => (
-            <div className="stack" key={title}><h3>{title}</h3><p>{description}</p></div>
+        <div className="about-page__areas">
+          {interests.map(({ title, paragraphs, highlights }) => (
+            <div className="stack" key={title}><h3>{title}</h3><Paragraphs paragraphs={paragraphs} highlights={highlights} /></div>
           ))}
         </div>
       </AboutSection>
@@ -49,27 +56,18 @@ function About() {
         <div className="stack">
           <h3>{featuredEducation.title}</h3>
           <p className="about-page__muted">{featuredEducation.status}</p>
-          <Paragraphs paragraphs={educationDescription} />
+          <Paragraphs paragraphs={educationDescription} highlights={['Computer Engineering', 'HL7 FHIR', 'interoperability']} />
         </div>
       </AboutSection>
-      <AboutSection id="about-tools" title="Tools & Technologies">
-        <div className="about-page__areas">
-          {technologyGroups.map(({ title, tools }) => (
-            <div key={title}>
-              <h3>{title}</h3>
-              <ul className="about-page__tools">{tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
-            </div>
-          ))}
-        </div>
-      </AboutSection>
+      <AboutToolbox />
       <section className="about-page__beyond" aria-labelledby="about-beyond">
-        <div className="reading-width stack">
+        <div className="about-page__article stack">
           <h2 id="about-beyond">Beyond software</h2>
-          <Paragraphs paragraphs={beyondSoftware} />
+          <Paragraphs paragraphs={beyondSoftware} highlights={['Monteverde, Costa Rica', 'photography', 'Russian as a third language']} />
         </div>
         <PersonalPhotoCarousel />
       </section>
-      <AboutSection id="about-currently" title="Currently"><Paragraphs paragraphs={currentFocus} /></AboutSection>
+      <AboutSection id="about-currently" title="Currently"><Paragraphs paragraphs={currentFocus} highlights={['Data Engineering', 'Data Architecture', 'artificial intelligence', 'neural networks', 'neuroscience']} /></AboutSection>
       <Connect description={aboutConnectDescription} />
     </div>
   )

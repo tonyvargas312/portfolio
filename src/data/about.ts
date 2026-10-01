@@ -5,28 +5,73 @@ export const introduction = [
 ]
 
 export const background = [
-  'My path into technology has been driven largely by curiosity and hands-on experimentation.',
-  'During my Computer Engineering studies, I have worked with programming, databases, networking, software quality, artificial intelligence, and software development. I have gradually become especially interested in how data moves through systems and how reliable software can be built around it.',
-  'That interest has pushed me toward Data Engineering, while still keeping me involved in application development, AI, and other areas of software engineering.',
+  "My path into technology has been driven by curiosity for as long as I can remember.",
+  "Some of my earliest experiences with technology came from taking apart old DVD players, sound systems, and other electronics just to understand what was happening inside them, and then trying to put everything back together again.",
+  "That interest was not always a straight path. During much of my teenage years, sports became a major focus of my life, particularly motocross. After high school, I initially explored psychology because I was fascinated by human behavior and the way people think. I eventually realized that psychology was not the career I wanted, but that curiosity never disappeared.",
+  "When I found my way back to technology, things started to make more sense. I had always been comfortable understanding systems, and the more I learned about engineering, software, networks, and data, the more I realized that this was where I wanted to be.",
+  "During my Computer Engineering studies, I have worked with programming, databases, networking, software quality, artificial intelligence, systems engineering, and software development. Over time, I became especially interested in how information moves between systems and how different technologies can communicate reliably with one another.",
+  "That interest has gradually pushed me toward Data Engineering, while still keeping me involved in application development, AI, systems integration, and other areas of software engineering.",
 ]
 
 export const workingApproach = [
-  'I learn best by building something tangible.',
-  'Instead of limiting projects to their original requirements, I often explore how they could become more complete systems. I like thinking about architecture, data flow, user experience, maintainability, and how a project could evolve beyond an initial prototype.',
-  'I also enjoy working iteratively: building a simple version first, testing it, identifying what does not work, and improving it step by step.',
-  'I use AI-assisted development tools as part of this process, but I treat them as tools rather than replacements for understanding the system. I still want to understand the architecture, code, data, and decisions behind what I build.',
+  "I learn best by building something tangible.",
+  "I tend to become deeply focused on whatever problem or idea has my attention at the time. When something interests me, I want to understand it from as many angles as possible and usually keep working on it until I can see the idea functioning in the real world.",
+  "Rather than immediately looking for a solution, I like spending time understanding the problem itself. I think about the architecture, data flow, user experience, limitations, maintainability, and how a project could evolve beyond its original requirements.",
+  "Because of that, I often take projects further than their initial scope. A simple university assignment can quickly become an opportunity to explore a new framework, database, API, system architecture, or technology I have not used before.",
+  "I also enjoy working iteratively: building a simple version first, testing it, identifying what does not work, and improving it step by step.",
+  "AI-assisted development tools are part of that process for me, but I treat them as tools rather than replacements for understanding. I still want to understand the architecture, code, data, and technical decisions behind what I build.",
 ]
 
 export const interests = [
-  { title: 'Data Engineering', description: 'Building reliable data pipelines, working with databases, transforming information, and designing systems that make data useful and accessible.' },
-  { title: 'Software Development', description: 'Designing applications from the initial concept through architecture, implementation, testing, and iteration.' },
-  { title: 'Artificial Intelligence', description: 'Exploring machine learning and natural language processing, particularly how AI can be integrated responsibly into practical applications.' },
-  { title: 'Systems & Infrastructure', description: 'Understanding how applications, networks, databases, cloud services, and infrastructure interact as complete systems.' },
+  {
+    "title": "Data Engineering",
+    "paragraphs": [
+      "I’m especially interested in how data is collected, structured, transformed, connected, and made useful.",
+      "My interest in psychology and sociology also plays a role here. I have always been fascinated by how information influences decisions and how patterns in data can help us understand human behavior.",
+      "I want to build reliable data pipelines and architectures that make information easier to access, connect, and use across different systems."
+    ],
+    "highlights": []
+  },
+  {
+    "title": "Software Development",
+    "paragraphs": [
+      "I enjoy turning ideas into working systems.",
+      "That can mean designing an application from the initial concept, thinking through its architecture, building the interface and backend, testing it, and then continuing to improve it as new ideas emerge.",
+      "I especially enjoy projects where several technologies have to work together rather than isolated pieces of software."
+    ],
+    "highlights": []
+  },
+  {
+    "title": "Artificial Intelligence",
+    "paragraphs": [
+      "I’m interested in artificial intelligence not only as a development tool, but as a field that intersects with data, human behavior, and the way information is processed.",
+      "Long term, I want to explore how AI, neural networks, and data architecture can be combined.",
+      "My earlier interest in psychology is still part of that goal. I find the human brain incredibly interesting as a system, and eventually I would like to pursue advanced studies that allow me to explore the relationship between neuroscience, technology, data, and artificial intelligence."
+    ],
+    "highlights": [
+      "AI",
+      "neural networks",
+      "data architecture",
+      "neuroscience"
+    ]
+  },
+  {
+    "title": "Systems & Infrastructure",
+    "paragraphs": [
+      "One of the things I find most interesting about technology is how completely independent systems can communicate with each other.",
+      "APIs, databases, networks, cloud services, authentication systems, and interoperability standards make it possible for software created by different people and organizations to work together.",
+      "That kind of connectivity is especially interesting to me because it turns individual applications into larger systems."
+    ],
+    "highlights": []
+  }
 ]
 
 export const educationDescription = [
-  'Currently completing my Computer Engineering degree in Costa Rica.',
-  'My studies have covered areas including software development, databases, networking, artificial intelligence, software quality assurance, mathematics, and systems engineering.',
+  "I’m currently completing my Computer Engineering degree in Costa Rica.",
+  "My studies have covered areas including software development, databases, networking, artificial intelligence, software quality assurance, mathematics, systems engineering, and computer infrastructure.",
+  "University has also given me the opportunity to work on projects outside a single specialization, which has helped me better understand how different areas of computing connect.",
+  "One experience I’m particularly proud of was participating in a healthcare interoperability Connectathon focused on HL7 FHIR standards being introduced in Costa Rica. Our team placed second while participating alongside healthcare IT professionals, including teams involving the Ministry of Health, the CCSS, and a private laboratory.",
+  "That experience strengthened my interest in interoperability, data standards, and systems that allow different organizations and technologies to communicate with one another.",
 ]
 
 export const technologyGroups = [
@@ -39,17 +84,22 @@ export const technologyGroups = [
 ]
 
 export const beyondSoftware = [
-  'Technology is only one of the things I enjoy exploring.',
-  'Motorsports have been part of my life for many years, especially motocross. That interest reflects the same curiosity that draws me to engineering: understanding how things work and finding ways to improve them.',
-  'Photography gives me a creative outlet outside software. I enjoy exploring it as another way to observe and create.',
-  'I also enjoy building things beyond traditional software work, including games and projects that bring technical and creative ideas together.',
-  'These interests shape how I approach problem solving. I like experimenting, learning through practice, and making room for creativity alongside the technical details.',
+  "Technology is only one of the things I enjoy exploring.",
+  "I’m originally from Monteverde, Costa Rica, which gave me a strong appreciation for nature, animals, and the small details in the environment around me. I still enjoy spending time outdoors, especially riding through trails and exploring places away from the city.",
+  "Motorsports have also been part of my life for many years. I spent a significant part of my teenage years around motocross, and I still enjoy riding motorcycles and quads. There is something about understanding a machine, pushing it, and learning how it responds that connects naturally with the way I think about engineering.",
+  "Photography gives me a different kind of creative outlet. I enjoy slowing down and paying attention to composition, light, movement, and details that are easy to overlook.",
+  "Music is another important part of my life. I play piano, guitar, and ukulele, and I enjoy the process of learning instruments for many of the same reasons I enjoy learning technology: experimentation, repetition, and gradually understanding how individual pieces fit together.",
+  "I also enjoy gaming and game development. Sometimes an idea for a game becomes another excuse to learn a new tool, system, or workflow. Recently, I’ve been playing games such as Stardew Valley and Helldivers 2.",
+  "I’m also currently learning Russian as a third language, which has become another long-term challenge I enjoy working on.",
+  "All of these interests shape the way I approach technical work. I like experimenting, learning through practice, observing small details, and leaving room for creativity alongside the engineering.",
 ]
 
 export const currentFocus = [
-  'I’m currently focused on strengthening my skills in Data Engineering and software development while completing my Computer Engineering degree.',
-  'At the same time, I continue building personal and academic projects involving mobile applications, artificial intelligence, databases, game development, and software engineering.',
-  'I’m particularly interested in opportunities where I can work with real systems, learn from experienced engineers, and continue developing practical technical skills.',
+  "I’m currently focused on strengthening my skills in Data Engineering and software development while completing my Computer Engineering degree.",
+  "Outside university, I continue learning through professional courses and personal projects that require me to constantly work with unfamiliar technologies.",
+  "My current direction is to begin my career in Data Engineering, where I can gain experience working with real data infrastructure, pipelines, databases, and production systems.",
+  "Long term, I want to grow toward Data Architecture and eventually explore how large-scale data systems can intersect with artificial intelligence, neural networks, and neuroscience.",
+  "I’m particularly interested in opportunities where I can work with real systems, learn from experienced engineers, solve meaningful problems, and continue building the technical foundation needed for that path.",
 ]
 
 export const aboutConnectDescription = 'If you’d like to discuss a project, technology, or professional opportunity, feel free to reach out.'

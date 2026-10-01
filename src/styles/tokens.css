@@ -37,6 +37,7 @@
   --space-32: 8rem;
 
   --width-page: 72rem;
+  --width-wide: 92rem;
   --width-reading: 65ch;
   --page-gutter: var(--space-4);
   --page-padding: var(--space-12);
