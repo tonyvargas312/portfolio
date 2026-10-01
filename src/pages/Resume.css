@@ -1,63 +1,28 @@
-.resume-page__intro { font-size: var(--text-lg); }
-
-.resume-map {
-  --map-background: #191d1b;
-  --map-ink: #f1f2ec;
-  --map-accent: #8ed8c8;
-  margin-block-start: var(--space-12);
-  padding: var(--space-6);
-  background: var(--map-background);
-  color: var(--map-ink);
-  font-family: var(--font-mono);
+.resume-page {
+  inline-size: min(var(--width-wide), calc(100vw - 2 * var(--page-gutter)));
+  margin-inline: calc((100% - min(var(--width-wide), 100vw - 2 * var(--page-gutter))) / 2);
 }
-
-.resume-map__legend {
-  font-size: var(--text-small);
-  color: var(--map-accent);
-}
-
-.resume-map__locations {
-  position: relative;
-  display: grid;
-  gap: var(--space-8);
-  padding-block: var(--space-12);
-}
-
-.resume-map__locations::before {
-  content: '';
-  position: absolute;
-  inset-block: var(--space-12);
-  left: 50%;
-  border-left: 2px dashed var(--map-accent);
-}
-
-.resume-map__location {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  gap: var(--space-3);
-  min-width: 0;
-  min-height: 10rem;
-  padding: var(--space-6) var(--space-3);
-  border: 2px solid var(--map-ink);
-  background: var(--map-background);
-  color: var(--map-ink);
-  font: inherit;
-  cursor: pointer;
-}
-
+.resume-page h1 { font-size: var(--text-3xl); }
+.resume-page__intro { font-size: var(--text-lg); max-inline-size: 65ch; }
+.resume-map { margin-block-start: var(--space-12); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--space-4); background: var(--color-surface); box-shadow: 0 var(--space-2) var(--space-6) rgb(0 0 0 / .06); }
+.resume-map__legend { color: var(--color-text-muted); font-size: var(--text-small); }
+.resume-map__locations { position: relative; aspect-ratio: 3 / 2; margin-block: var(--space-6); overflow: hidden; border-radius: var(--space-2); }
+.resume-map__art { display: block; inline-size: 100%; block-size: 100%; color: var(--color-text); }
+.resume-map__location { position: absolute; transform: translateX(-50%); display: grid; justify-items: center; gap: var(--space-1); min-block-size: 2.75rem; min-inline-size: 7rem; padding: var(--space-2); border: 1px solid var(--color-border); border-radius: var(--space-2); background: var(--color-surface); color: var(--color-text); font-family: var(--font-ui); font-size: clamp(.75rem, 1.5vw, 1rem); font-weight: var(--weight-emphasis); cursor: pointer; }
+.resume-map__location[data-location='train-station'] { left: 20%; top: 38%; }
+.resume-map__location[data-location='data-center'] { left: 75%; top: 38%; }
+.resume-map__location[data-location='workshop'] { left: 50%; top: 84%; }
 .resume-map__location:hover,
-.resume-map__location[data-found='true'] { border-color: var(--map-accent); }
-.resume-map__location:focus-visible { outline-color: var(--map-accent); outline-offset: 5px; }
+.resume-map__location[data-selected='true'],
+.resume-map__location[data-searching='true'],
+.resume-map__location[data-found='true'] { border-color: var(--color-accent); color: var(--color-accent); }
+.resume-map__location:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .resume-map__location[aria-disabled='true'] { cursor: wait; }
-.resume-map__marker { color: var(--map-accent); font-size: var(--text-xl); }
-.resume-map__result { font-size: var(--text-small); }
-.resume-map__status { min-height: 3.3em; font-size: var(--text-small); }
-.resume-map__location[data-searching='true'] { animation: resume-search 300ms steps(2, end) 2; }
-
-@keyframes resume-search {
-  50% { transform: translateY(-3px); border-color: var(--map-accent); }
-}
+.resume-map__result { font-size: .75em; color: var(--color-text-muted); font-weight: var(--weight-normal); }
+.resume-map__status { min-block-size: 2em; font-size: var(--text-small); color: var(--color-accent); }
+@media (min-width: 40rem) { .resume-map { padding: var(--space-6); } }
+@media (max-width: 30rem) { .resume-map__locations { aspect-ratio: 1; } .resume-map__location[data-location='train-station'], .resume-map__location[data-location='data-center'] { top: 43%; } .resume-map__location[data-location='train-station'] { left: 23%; } .resume-map__location[data-location='data-center'] { left: 77%; } .resume-map__location[data-location='workshop'] { top: 75%; } }
+@media (prefers-reduced-motion: no-preference) { .resume-map__location { transition: border-color 180ms ease, color 180ms ease; } }
 
 .resume-page__discovery,
 .resume-page__direct { margin-block-start: var(--space-8); }
@@ -66,17 +31,3 @@
 .resume-page__action[aria-disabled='true'] { color: var(--color-text-muted); text-decoration: none; }
 .resume-page__note { max-width: var(--width-reading); margin-block-start: var(--space-3); color: var(--color-text-muted); font-size: var(--text-small); }
 
-@media (min-width: 40rem) {
-  .resume-map { padding: var(--space-12); }
-  .resume-map__locations { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .resume-map__locations::before {
-    inset-inline: var(--space-8);
-    inset-block: 50% auto;
-    border-left: 0;
-    border-top: 2px dashed var(--map-accent);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .resume-map__location[data-searching='true'] { animation: none; border-color: var(--map-accent); }
-}

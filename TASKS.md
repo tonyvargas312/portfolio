@@ -108,6 +108,8 @@
 - [x] Resume PDF
 - [x] Contact information
 
+- [x] Resume pixel-map restyle (wide themed custom SVG landmarks, native accessible hotspots, preserved search results and PDF links)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)
