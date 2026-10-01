@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import ResumeMapArtwork from '../components/ResumeMapArtwork'
 import ResumeLink from '../components/ResumeLink'
-import { resumeDocument } from '../data/resume'
 import './Resume.css'
 
 const locations = ['Train Station', 'Data Center', 'Workshop'] as const
@@ -35,6 +34,7 @@ function Resume() {
       <header className="section-heading">
         <h1 className="section-title">Resume</h1>
         <p className="resume-page__intro">I seem to have misplaced my resume. Can you find it?</p>
+        <p className="resume-page__direct">In a hurry? <a href="https://tonyvargas.vercel.app/assets/Anthony_Vargas_Arguedas_CV-y3Fs8-0v.pdf" download>Download resume directly.</a></p>
       </header>
       <section className="resume-map" aria-label="Find the resume" aria-describedby="resume-map-description">
         <p id="resume-map-description" className="resume-map__legend">A fictional map. Three places to look.</p>
@@ -60,10 +60,6 @@ function Resume() {
           <div className="resume-page__actions"><ResumeLink>View Resume</ResumeLink><ResumeLink download>Download PDF</ResumeLink></div>
         </section>
       )}
-      <div className="resume-page__direct">
-        <p>In a hurry? <ResumeLink download>Download resume directly.</ResumeLink></p>
-        {!resumeDocument.url && <p id="resume-file-status" className="resume-page__note">The resume PDF has not been added yet. View and download links will be available once it is ready.</p>}
-      </div>
     </div>
   )
 }

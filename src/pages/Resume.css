@@ -23,8 +23,8 @@
 @media (max-width: 30rem) { .resume-map__locations { aspect-ratio: 1; } .resume-map__location[data-location='train-station'], .resume-map__location[data-location='data-center'] { top: 43%; } .resume-map__location[data-location='train-station'] { left: 23%; } .resume-map__location[data-location='data-center'] { left: 77%; } .resume-map__location[data-location='workshop'] { top: 75%; } }
 @media (prefers-reduced-motion: no-preference) { .resume-map__location { transition: border-color 180ms ease, color 180ms ease; } }
 
-.resume-page__discovery,
-.resume-page__direct { margin-block-start: var(--space-8); }
+.resume-page__discovery { margin-block-start: var(--space-8); }
+.resume-page .resume-page__direct { font-size: var(--text-body); color: var(--color-text); margin-block-start: var(--space-4); }
 .resume-page__actions { display: flex; flex-wrap: wrap; gap: var(--space-6); margin-block-start: var(--space-4); }
 .resume-page__action { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: underline; text-underline-offset: 0.2em; }
 .resume-page__action[aria-disabled='true'] { color: var(--color-text-muted); text-decoration: none; }

@@ -168,3 +168,5 @@
 - [x] Unify primary section titles using the current Projects heading typography and spacing; retain secondary case-study/nested hierarchy and remove decorative section dividers across pages.
 
 - [x] Arrange footer copyright left, enlarged Back to top at the true container center, and existing social links right; retain a clean mobile stack and reduced-motion scrolling.
+
+- [x] Move the single direct resume download prompt beneath the Resume intro using the supplied PDF URL; preserve the interactive map.
