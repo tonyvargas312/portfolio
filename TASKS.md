@@ -112,6 +112,8 @@
 
 - [x] Resume pixel-map restyle (wide themed custom SVG landmarks, native accessible hotspots, preserved search results and PDF links)
 
+- [x] Supabase photo assignments (Home-exclusive profile; lankaster/beach biography; childhood Background; hummingbird Beyond software; shared Storage URL helper and stable image states)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

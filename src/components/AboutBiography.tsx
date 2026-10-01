@@ -1,4 +1,4 @@
-import AboutPortrait from './AboutPortrait'
+import PortfolioPhoto from './PortfolioPhoto'
 import { biography } from '../data/biography'
 
 function BiographyParagraphs({ paragraphs }: { paragraphs: typeof biography }) {
@@ -19,14 +19,12 @@ function AboutBiography() {
         <BiographyParagraphs paragraphs={biography.slice(0, 1)} />
       </header>
       <div className="about-biography__row about-biography__row--text-first">
-        <div className="about-page__personal-photo"><AboutPortrait /></div>
+        <div className="about-page__personal-photo"><PortfolioPhoto filename="lankaster.jpeg" alt="Anthony standing outdoors" /></div>
         <BiographyParagraphs paragraphs={biography.slice(1, 5)} />
       </div>
       <div className="about-biography__row">
         <div className="about-page__personal-photo">
-          <div className="about-page__portrait">
-            <div className="about-page__portrait-placeholder"><p>Additional photo</p></div>
-          </div>
+          <PortfolioPhoto filename="beach.jpeg" alt="Anthony in the water at the beach" />
         </div>
         <BiographyParagraphs paragraphs={biography.slice(5)} />
       </div>

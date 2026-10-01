@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import AboutPortrait from '../components/AboutPortrait'
+import PortfolioPhoto from '../components/PortfolioPhoto'
 import './AboutPreview.css'
 
 function AboutPreview() {
@@ -8,7 +8,7 @@ function AboutPreview() {
       <div className="about-preview__layout">
         <h2 id="about-preview-title" className="about-preview__title">About Me</h2>
         <div className="about-preview__photo">
-          <AboutPortrait />
+          <PortfolioPhoto filename="profile.jpeg" alt="Anthony Vargas portrait" />
         </div>
         <div className="about-preview__content stack">
           <p>

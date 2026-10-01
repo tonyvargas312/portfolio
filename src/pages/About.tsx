@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import AboutBiography from '../components/AboutBiography'
-import PersonalPhotoCarousel from '../components/PersonalPhotoCarousel'
+import PortfolioPhoto from '../components/PortfolioPhoto'
+import '../components/PersonalPhotoCarousel.css'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
 import {
@@ -34,9 +35,7 @@ function About() {
         <h2 id="about-background">Background</h2>
         <div className="about-biography__row about-biography__row--text-first">
           <div className="about-page__personal-photo">
-            <div className="about-page__portrait">
-              <div className="about-page__portrait-placeholder"><p>Childhood photo</p></div>
-            </div>
+            <PortfolioPhoto filename="childhood.jpeg" alt="Anthony as a child" />
           </div>
           <div className="about-page__introduction-text">
             <Paragraphs paragraphs={background} highlights={['Computer Engineering', 'Data Engineering', 'systems integration']} />
@@ -63,7 +62,7 @@ function About() {
           <h2 id="about-beyond">Beyond software</h2>
           <Paragraphs paragraphs={beyondSoftware} highlights={['Monteverde, Costa Rica', 'photography', 'Russian as a third language']} />
         </div>
-        <PersonalPhotoCarousel />
+        <div className="personal-photos"><PortfolioPhoto filename="hummingbird.jpeg" alt="Hummingbird photographed in nature" presentation="personal" /></div>
       </section>
       <AboutSection id="about-currently" title="Currently"><Paragraphs paragraphs={currentFocus} highlights={['Data Engineering', 'Data Architecture', 'artificial intelligence', 'neural networks', 'neuroscience']} /></AboutSection>
       <Connect description={aboutConnectDescription} />
