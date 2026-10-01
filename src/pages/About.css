@@ -164,5 +164,4 @@
 }
 
 
-/* Background keeps article typography with its own stacked photo composition. */
-.about-page__background { grid-template-columns: minmax(0, 1fr); }
+

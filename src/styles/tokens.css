@@ -39,7 +39,6 @@
   --width-page: 72rem;
   --width-wide: 92rem;
   --width-reading: 65ch;
-  --aspect-about-media: 858 / 748;
   --page-gutter: var(--space-4);
   --page-padding: var(--space-12);
   --section-gap: var(--space-16);

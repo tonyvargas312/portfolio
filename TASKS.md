@@ -138,6 +138,8 @@
 
 - [x] Beyond Software landscape correction (scoped 3:2 cards, 460px maximum width and 120/240px desktop offsets; unchanged carousel behavior and other photo ratios)
 
+- [x] About structure and media remap (removed Background/data/unused stack, childhood and renamed profile biography photos, refreshed Home profile URL, and cone added to three-photo 3D carousel)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

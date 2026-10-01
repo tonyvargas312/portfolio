@@ -19,12 +19,12 @@ function AboutBiography() {
         <BiographyParagraphs paragraphs={biography.slice(0, 1)} />
       </header>
       <div className="about-biography__row about-biography__row--text-first">
-        <div className="about-page__personal-photo"><PortfolioPhoto filename="lankaster.jpeg" alt="Anthony standing outdoors" /></div>
+        <div className="about-page__personal-photo"><PortfolioPhoto filename="childhood.jpeg" alt="Anthony as a child" /></div>
         <BiographyParagraphs paragraphs={biography.slice(1, 5)} />
       </div>
       <div className="about-biography__row">
         <div className="about-page__personal-photo">
-          <PortfolioPhoto filename="beach.jpeg" alt="Anthony in the water at the beach" />
+          <PortfolioPhoto filename="profile.jpeg" alt="Anthony standing outdoors" />
         </div>
         <BiographyParagraphs paragraphs={biography.slice(5)} />
       </div>

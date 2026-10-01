@@ -1,6 +1,6 @@
 import { supabase } from './supabase'
 
-export type PortfolioPhotoFilename = 'profile.jpeg' | 'lankaster.jpeg' | 'beach.jpeg' | 'childhood.jpeg' | 'hummingbird.jpeg' | 'motocross.jpeg'
+export type PortfolioPhotoFilename = 'profile.jpeg' | 'childhood.jpeg' | 'hummingbird.jpeg' | 'motocross.jpeg' | 'cone.jpeg'
 
 export function getPortfolioPhotoUrl(filename: PortfolioPhotoFilename, refreshToken?: string) {
   const publicUrl = supabase.storage.from('portfolio-photos').getPublicUrl(`about/${filename}`).data.publicUrl

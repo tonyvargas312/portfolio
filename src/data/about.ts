@@ -4,15 +4,6 @@ export const introduction = [
   'My goal is to continue growing as an engineer while gaining experience with data-intensive systems, backend technologies, cloud platforms, and modern software development.',
 ]
 
-export const background = [
-  "My path into technology has been driven by curiosity for as long as I can remember.",
-  "Some of my earliest experiences with technology came from taking apart old DVD players, sound systems, and other electronics just to understand what was happening inside them, and then trying to put everything back together again.",
-  "That interest was not always a straight path. During much of my teenage years, sports became a major focus of my life, particularly motocross. After high school, I initially explored psychology because I was fascinated by human behavior and the way people think. I eventually realized that psychology was not the career I wanted, but that curiosity never disappeared.",
-  "When I found my way back to technology, things started to make more sense. I had always been comfortable understanding systems, and the more I learned about engineering, software, networks, and data, the more I realized that this was where I wanted to be.",
-  "During my Computer Engineering studies, I have worked with programming, databases, networking, software quality, artificial intelligence, systems engineering, and software development. Over time, I became especially interested in how information moves between systems and how different technologies can communicate reliably with one another.",
-  "That interest has gradually pushed me toward Data Engineering, while still keeping me involved in application development, AI, systems integration, and other areas of software engineering.",
-]
-
 export const workingApproach = [
   "I learn best by building something tangible.",
   "I tend to become deeply focused on whatever problem or idea has my attention at the time. When something interests me, I want to understand it from as many angles as possible and usually keep working on it until I can see the idea functioning in the real world.",

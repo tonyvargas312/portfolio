@@ -1,12 +1,11 @@
 import type { ReactNode } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import AboutBiography from '../components/AboutBiography'
-import PortfolioPhoto from '../components/PortfolioPhoto'
 import PersonalPhotoCarousel from '../components/PersonalPhotoCarousel'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
 import {
-  background, workingApproach, interests, educationDescription,
+  workingApproach, interests, educationDescription,
   beyondSoftware, currentFocus, aboutConnectDescription,
 } from '../data/about'
 import './About.css'
@@ -31,15 +30,6 @@ function About() {
         <AboutVideo />
       </section>
       <AboutBiography />
-      <section className="about-page__section about-page__background" aria-labelledby="about-background">
-        <h2 id="about-background">Background</h2>
-        <div className="about-biography__row about-biography__row--text-first">
-          <div className="about-page__personal-photo"><PortfolioPhoto filename="childhood.jpeg" alt="Anthony as a child" /></div>
-          <div className="about-page__introduction-text">
-            <Paragraphs paragraphs={background} highlights={['Computer Engineering', 'Data Engineering', 'systems integration']} />
-          </div>
-        </div>
-      </section>
       <AboutSection id="about-process" title="How I work"><Paragraphs paragraphs={workingApproach} highlights={['problem itself', 'AI-assisted development tools']} /></AboutSection>
       <AboutSection id="about-interests" title="What I’m interested in">
         <div className="about-page__areas">

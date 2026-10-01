@@ -24,6 +24,7 @@ function PersonalPhotoCarousel({ initialPhotos }: { initialPhotos?: readonly Per
         setPhotos([
           { src: getPortfolioPhotoUrl('hummingbird.jpeg', refreshToken), alt: 'Hummingbird photographed in nature' },
           { src: getPortfolioPhotoUrl('motocross.jpeg', refreshToken), alt: 'Anthony riding motocross' },
+          { src: getPortfolioPhotoUrl('cone.jpeg', refreshToken), alt: 'A personal-interest photo featuring a cone' },
         ])
       } catch { /* Preserve a clean fallback without exposing configuration errors. */ }
       finally { if (mounted) setLoading(false) }

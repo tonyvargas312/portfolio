@@ -10,7 +10,7 @@ function PortfolioPhoto({ filename, alt, presentation = 'portrait' }: Props) {
   useEffect(() => {
     let active = true
     void import('../lib/portfolioPhotos').then(({ getPortfolioPhotoUrl }) => {
-      if (active) setPhoto({ filename, src: getPortfolioPhotoUrl(filename) })
+      if (active) setPhoto({ filename, src: getPortfolioPhotoUrl(filename, Date.now().toString()) })
     }).catch(() => { if (active) setFailed(filename) })
     return () => { active = false }
   }, [filename])
