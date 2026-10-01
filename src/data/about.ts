@@ -40,8 +40,10 @@ export const technologyGroups = [
 
 export const beyondSoftware = [
   'Technology is only one of the things I enjoy exploring.',
-  'I have a long-standing interest in motorsports and spent many years involved in motocross. I’m also interested in photography, game development, and creating projects that combine technical and creative work.',
-  'These interests influence the way I approach engineering: I enjoy understanding how things work, experimenting with them, and continuously trying to improve them.',
+  'Motorsports have been part of my life for many years, especially motocross. That interest reflects the same curiosity that draws me to engineering: understanding how things work and finding ways to improve them.',
+  'Photography gives me a creative outlet outside software. I enjoy exploring it as another way to observe and create.',
+  'I also enjoy building things beyond traditional software work, including games and projects that bring technical and creative ideas together.',
+  'These interests shape how I approach problem solving. I like experimenting, learning through practice, and making room for creativity alongside the technical details.',
 ]
 
 export const currentFocus = [

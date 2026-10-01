@@ -1,0 +1,24 @@
+.personal-photos__viewport {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--space-2);
+  background: var(--color-surface);
+}
+
+.personal-photos__viewport img {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.personal-photos__placeholder {
+  display: grid;
+  place-items: center;
+  block-size: 100%;
+  padding: var(--space-6);
+  color: var(--color-text-muted);
+  text-align: center;
+}

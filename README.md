@@ -86,6 +86,11 @@ the first published `about` record in `public.portfolio_videos`, ordered by
 `sort_order`. It uses the video ID (or a supported YouTube URL), preserves valid
 start times, and keeps the existing placeholder on missing or invalid metadata.
 
+The Beyond software carousel loads published `portfolio_photos` rows with
+`section = 'beyond-software'`, ordered by `sort_order`. Images use public Storage
+URLs from the same bucket and database alt text, without visible captions.
+Published additions and reordering are picked up on the next About page load.
+
 For local development, fill in the blank entries in the Git-ignored `.env.local`:
 
     VITE_SUPABASE_URL=
