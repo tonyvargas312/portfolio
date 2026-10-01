@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import AboutBiography from '../components/AboutBiography'
-import AboutToolbox from '../components/AboutToolbox'
 import PersonalPhotoCarousel from '../components/PersonalPhotoCarousel'
 import Connect from '../sections/Connect'
 import { featuredEducation } from '../data/education'
@@ -59,7 +58,6 @@ function About() {
           <Paragraphs paragraphs={educationDescription} highlights={['Computer Engineering', 'HL7 FHIR', 'interoperability']} />
         </div>
       </AboutSection>
-      <AboutToolbox />
       <section className="about-page__beyond" aria-labelledby="about-beyond">
         <div className="about-page__article stack">
           <h2 id="about-beyond">Beyond software</h2>

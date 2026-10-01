@@ -53,6 +53,8 @@
 
 ## Phase 3 — Home
 
+- [x] Move Tools & Technologies to Home between Education & Certifications and Connect, reusing the existing component/data/styles and removing its About rendering
+
 - [x] Connect closing section restyle (four full-card icon links, preserved contact data and Resume route, wide responsive grid, theme surfaces and visible keyboard focus)
 
 - [x] Education visual restyle (wide section, Project-style rounded cards, meaningful preview slots, stronger typography and accent links; preserved layout, data and expansion)
