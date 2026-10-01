@@ -60,8 +60,8 @@
   --color-focus: var(--color-accent);
   --color-particle: #344e49;
   --particle-opacity-min: 0.2;
-  --particle-opacity-max: 0.38;
-  --particle-opacity-static: 0.28;
+  --particle-opacity-max: 0.48;
+  --particle-opacity-static: 0.38;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,8 +76,8 @@
     --color-accent-hover: #b4eadf;
     --color-particle: #f1f2ec;
     --particle-opacity-min: 0.22;
-    --particle-opacity-max: 0.55;
-    --particle-opacity-static: 0.35;
+    --particle-opacity-max: 0.6;
+    --particle-opacity-static: 0.42;
   }
 }
 
@@ -92,8 +92,8 @@
   --color-accent-hover: #b4eadf;
   --color-particle: #f1f2ec;
   --particle-opacity-min: 0.22;
-  --particle-opacity-max: 0.55;
-  --particle-opacity-static: 0.35;
+  --particle-opacity-max: 0.6;
+  --particle-opacity-static: 0.42;
 }
 
 /* Mobile first: 40rem (tablet), 64rem (desktop).

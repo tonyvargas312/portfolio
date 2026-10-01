@@ -12,12 +12,22 @@ const particles = Array.from({ length: 256 }, (_, index) => ({
   '--twinkle-delay': `${-index * 3}s`,
 }) as CSSProperties)
 
-const activeParticles = Array.from({ length: 16 }, (_, index) => ({
-  left: `${(index * 43 + 11) % 100}%`,
-  '--active-size': `${3 + index % 3}px`,
-  '--active-duration': `${38 + index % 7 * 5}s`,
-  '--active-delay': `${-index * 13}s`,
-  '--active-travel': `${(index % 2 ? -1 : 1) * (8 + index % 5 * 3)}vw`,
+// Seeded variation avoids repeated patterns and stays stable across renders.
+function variation(index: number, salt: number) {
+  const value = Math.sin((index + 1) * 127.1 + salt * 311.7) * 43758.5453
+  return value - Math.floor(value)
+}
+const activeParticles = Array.from({ length: 24 }, (_, index) => ({
+  left: `${5 + variation(index, 1) * 90}%`,
+  top: `${10 + variation(index, 2) * 85}%`,
+  '--active-size': `${2 + variation(index, 3) * 4}px`,
+  '--active-duration': `${6 + variation(index, 4) * 6 + (index % 7 === 0 ? 3 : 0)}s`,
+  '--active-delay': `${-variation(index, 5) * 15}s`,
+  '--active-opacity': `${0.65 + variation(index, 6) * 0.35}`,
+  '--float-x': `${20 + variation(index, 7) * 15}px`,
+  '--float-y': `${-(30 + variation(index, 8) * 15)}px`,
+  '--late-x': `${-(12 + variation(index, 9) * 10)}px`,
+  '--late-y': `${-(65 + variation(index, 10) * 15)}px`,
 }) as CSSProperties)
 
 function BackgroundParticles() {
@@ -27,7 +37,7 @@ function BackgroundParticles() {
         <span className="background-particles__particle" key={index} style={style} />
       ))}
       <div className="background-particles__active-layer">
-        {activeParticles.map((style, index) => <span key={index} className="background-particles__active" data-accent={index % 5 === 0} data-square={index % 4 === 0} style={style} />)}
+        {activeParticles.map((style, index) => <span key={index} className="background-particles__active" data-accent={index % 5 === 0} data-type={index % 8 === 6 ? 'vertical' : index % 2 ? 'square' : 'circle'} style={style} />)}
       </div>
     </div>
   )

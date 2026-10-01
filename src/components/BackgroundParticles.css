@@ -11,7 +11,7 @@
   position: absolute;
   inline-size: var(--particle-size);
   block-size: var(--particle-size);
-  animation: particle-drift var(--drift-duration) linear var(--drift-delay) infinite;
+
 }
 
 .background-particles__particle::before {
@@ -22,26 +22,7 @@
   border-radius: 50%;
   background: var(--color-particle);
   opacity: var(--particle-opacity-static);
-  animation: particle-twinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite;
-}
 
-@keyframes particle-drift {
-  0% {
-    transform: translateY(-32px);
-    opacity: 0;
-  }
-  15%, 85% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(32px);
-    opacity: 0;
-  }
-}
-
-@keyframes particle-twinkle {
-  0%, 100% { opacity: var(--particle-opacity-min); }
-  50% { opacity: var(--particle-opacity-max); }
 }
 
 @media (max-width: 39.999rem) {
@@ -58,14 +39,44 @@
 }
 
 .background-particles__active-layer { position: absolute; inset: 0; }
-.background-particles__active { position: absolute; top: 0; inline-size: var(--active-size); block-size: var(--active-size); border-radius: 50%; background: var(--color-particle); opacity: 0; animation: active-particle-drift var(--active-duration) linear var(--active-delay) infinite; }
-.background-particles__active[data-accent='true'] { background: var(--color-accent); }
-.background-particles__active[data-square='true'] { border-radius: 0; }
-@keyframes active-particle-drift {
-  0% { transform: translate3d(0, 105vh, 0); opacity: 0; }
-  12%, 88% { opacity: var(--particle-opacity-max); }
-  100% { transform: translate3d(var(--active-travel), -5vh, 0); opacity: 0; }
+.background-particles__active {
+  position: absolute;
+  inline-size: var(--active-size);
+  block-size: var(--active-size);
+  opacity: calc(var(--active-opacity) * var(--particle-opacity-static));
 }
-@media (max-width: 63.999rem) { .background-particles__active:nth-child(n + 13) { display: none; } }
-@media (max-width: 39.999rem) { .background-particles__active:nth-child(n + 8) { display: none; } }
-@media (prefers-reduced-motion: reduce) { .background-particles__active-layer { display: none; } }
+.background-particles__active::before {
+  content: '';
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 50%;
+  background: var(--color-particle);
+}
+.background-particles__active[data-accent='true']::before { background: var(--color-accent); }
+.background-particles__active[data-type='square']::before { border-radius: 1px; }
+.background-particles__active[data-type='vertical'] { inline-size: 2px; block-size: 7px; }
+.background-particles__active[data-type='vertical']::before { border-radius: 1px; }
+@keyframes active-particle-float {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+  20% { opacity: var(--particle-opacity-max); }
+  50% { transform: translate(var(--float-x), var(--float-y)) scale(1.35); opacity: var(--particle-opacity-static); }
+  80% { transform: translate(var(--late-x), var(--late-y)) scale(.8); opacity: 0; }
+}
+@keyframes active-particle-turn {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  25% { transform: translate(-22px, -28px) rotate(75deg); opacity: var(--particle-opacity-max); }
+  50% { transform: translate(14px, -58px) rotate(155deg); opacity: var(--particle-opacity-static); }
+  75% { transform: translate(-8px, -24px) rotate(240deg); opacity: var(--particle-opacity-max); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .background-particles__active { animation: active-particle-float var(--active-duration) ease-in-out var(--active-delay) infinite; }
+  .background-particles__active::before { opacity: var(--active-opacity); }
+  .background-particles__active[data-type='square'] { animation-direction: reverse; }
+  .background-particles__active[data-type='vertical'] { animation-name: active-particle-turn; }
+}
+@media (max-width: 63.999rem) { .background-particles__active:nth-child(n + 19) { display: none; } }
+@media (max-width: 39.999rem) {
+  .background-particles__active:nth-child(n + 13) { display: none; }
+  .background-particles__active-layer { scale: .8; transform-origin: center; }
+}

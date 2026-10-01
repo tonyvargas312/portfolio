@@ -12,8 +12,12 @@ function Hero() {
     function update() {
       frame = 0
       if (!artwork.current) return
-      const progress = Math.min(1, Math.max(0, window.scrollY / window.innerHeight))
-      artwork.current.style.setProperty('--orbit-rotation', `${motion.matches ? 0 : progress * 12}deg`)
+      const hero = artwork.current.closest('.hero')
+      if (!hero) return
+      const bounds = hero.getBoundingClientRect()
+      const progress = Math.min(1, Math.max(0, -bounds.top / bounds.height))
+      const maximumRotation = window.innerWidth < 640 ? 5 : 10
+      artwork.current.style.setProperty('--orbit-rotation', `${motion.matches ? 0 : (1 - progress) * maximumRotation}deg`)
     }
     function schedule() { if (!frame) frame = window.requestAnimationFrame(update) }
     update()

@@ -118,6 +118,8 @@
 
 - [x] Ambient background and Hero motion polish (higher-contrast themed stars, sparse independent CSS drifting layer, and reduced-motion-aware scroll rotation)
 
+- [x] Source-referenced particle motion refinement (stable varied viewport floats, squares and sparse rotating slivers, static visible reduced-motion stars/particles, and Hero rotation settling to center)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)
