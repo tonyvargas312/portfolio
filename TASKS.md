@@ -2,6 +2,8 @@
 
 ## Phase 1 — Foundation
 
+- [x] Supabase foundation (JavaScript client dependency, shared TypeScript client, typed environment variables, and ignored local configuration; no UI queries)
+
 - [x] Initialize React + Vite + TypeScript
 - [x] Initialize Git repository
 - [x] Create project folder structure
