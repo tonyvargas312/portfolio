@@ -128,6 +128,8 @@
 
 - [x] Source-based glow and orange particle pass (TJ SASS shadow recipes recolored across UI/media, theme alpha adaptation, 39 active particles with 16 orange, and preserved Hero/reduced-motion behavior)
 
+- [x] Dark-only glow color tuning (near-white teal primary, faint aqua support and pale focus/hover edges; unchanged light-mode recipe and all shadow geometry)
+
 ## Phase 6 — Polish
 
 - [x] Wide footer polish (navbar-aligned boundaries, preserved copyright/social links, responsive grouping, and accessible reduced-motion-aware Back to top)

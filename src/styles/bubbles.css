@@ -9,12 +9,12 @@
 .project-card__badges li,
 .education-card__metadata span { border-color: var(--glow-edge); box-shadow: var(--glow-pill); }
 :is(.projects-showcase__pill, .navbar__theme-switch, .education-preview__toggle, .resume-map__location):is(.projects-showcase__pill, .navbar__theme-switch, .education-preview__toggle, .resume-map__location):hover,
-.about-toolbox__item:hover .about-toolbox__tile { border-color: var(--color-accent); box-shadow: var(--glow-pill-hover); }
+.about-toolbox__item:hover .about-toolbox__tile { border-color: var(--glow-hover-edge); box-shadow: var(--glow-pill-hover); }
 .hero__primary.hero__primary:hover { box-shadow: var(--glow-button-hover); }
 .projects-showcase__pill.projects-showcase__pill[aria-pressed='true'],
 .resume-map__location.resume-map__location[data-selected='true'],
 .hero__primary.hero__primary:active { border-color: var(--glow-edge-active); box-shadow: var(--glow-pill-selected); }
-:is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary, .connect__link, .education-preview__toggle, .resume-map__location):focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; box-shadow: var(--glow-pill-selected); }
+:is(.projects-showcase__pill, .navbar__theme-switch, .hero__primary, .connect__link, .education-preview__toggle, .resume-map__location):focus-visible { outline: 2px solid var(--glow-focus); outline-offset: 3px; box-shadow: var(--glow-pill-selected); }
 /* Glow belongs to the outer frame so internal overflow still clips the media. */
 .about-page__personal-photo .about-page__portrait.about-page__portrait,
 .about-preview__photo .about-page__portrait.about-page__portrait,
