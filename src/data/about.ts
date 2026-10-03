@@ -37,7 +37,7 @@ export const interests = [
     "paragraphs": [
       "I’m interested in artificial intelligence not only as a development tool, but as a field that intersects with data, human behavior, and the way information is processed.",
       "Long term, I want to explore how AI, neural networks, and data architecture can be combined.",
-      "My earlier interest in psychology is still part of that goal. I find the human brain incredibly interesting as a system, and eventually I would like to pursue advanced studies that allow me to explore the relationship between neuroscience, technology, data, and artificial intelligence."
+      "My earlier interest in psychology is still part of that goal. I find the human mind incredibly interesting as a system, and eventually I would like to pursue advanced studies that allow me to explore the relationship between neuroscience, technology, data, and artificial intelligence."
     ],
     "highlights": [
       "AI",
